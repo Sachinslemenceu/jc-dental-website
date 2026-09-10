@@ -1,0 +1,19 @@
+{
+  "name": "jc-dental-clinic-digital-redesign",
+  "version": "1.0.0",
+  "description": "JC Dental Clinic Digital Redesign - Extracted from Stitch AI project",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx -y serve . -l 3000",
+    "start": "npx -y serve . -l 3000"
+  },
+  "keywords": [
+    "dental",
+    "clinic",
+    "redesign",
+    "stitch",
+    "tailwind"
+  ],
+  "author": "",
+  "license": "ISC"
+}

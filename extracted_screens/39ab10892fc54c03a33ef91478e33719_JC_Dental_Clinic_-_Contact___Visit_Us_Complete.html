@@ -1,0 +1,1931 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>JC Dental Clinic - Smile Brighter with Us</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            primary: '#0d5c75',
+            secondary: '#1e3a8a',
+            surface: {
+              DEFAULT: '#f9f9ff',
+              dim: '#d0daf0',
+              bright: '#f9f9ff',
+              container: {
+                lowest: '#ffffff',
+                low: '#f0f3ff',
+                DEFAULT: '#e6ebfc',
+                high: '#d8e1f5',
+                highest: '#c5d3f0'
+              }
+            }
+          },
+          borderRadius: {
+            '4xl': '2rem',
+            '5xl': '2.5rem',
+            '6xl': '3rem',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-utilities">
+    body {
+      background-color: #ffffff;
+      color: #1f2937;
+    }
+    .clip-path-slant {
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+    }
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    /* Range slider custom styling for before/after comparison */
+    .ba-slider-input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: transparent;
+      cursor: ew-resize;
+    }
+    .ba-slider-input::-moz-range-thumb {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: transparent;
+      cursor: ew-resize;
+      border: none;
+    }
+  </style>
+</head>
+<body class="antialiased overflow-x-hidden selection:bg-primary selection:text-white">
+<!-- BEGIN: Navigation -->
+<nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      <!-- Logo -->
+      <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+        <div class="flex items-center gap-2">
+          <img alt="JC Dental Clinic Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdLv8gIhlrZbwTO5It8MN-Rc33WMjl8wbMKUvSy0mi1FTk18mscTrMcX6DKQZ5734Cr-TkltF02cxv4ecLzg3phGxRNn7VYaMUEYLpN5TNvfdAvR_YuI5zcruMAB6XZ9re8OKmRpQBKmc9htE0AmnoM0M-MAWVWStg8bbbtfTRAHpYU2mM-2ehT3Qi83LSwinM9X62Xk4sF7uhX209DfHFDQuqXC4pHqm5b3CWI6Zf7CRSE-ioSgod1JkozBEv8rYOPA">
+          <span class="font-bold text-xl tracking-tight text-gray-900">JC Dental</span>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation Menu -->
+      <div class="hidden md:flex items-center justify-center space-x-8">
+        <a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors cursor-pointer" onclick="event.preventDefault(); document.getElementById('services')?.scrollIntoView({behavior: 'smooth'});" href="#services">Services</a>
+        <a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors cursor-pointer" onclick="event.preventDefault(); document.getElementById('stories')?.scrollIntoView({behavior: 'smooth'});" href="#stories">Stories</a>
+        <a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors cursor-pointer" onclick="event.preventDefault(); document.getElementById('experts')?.scrollIntoView({behavior: 'smooth'});" href="#experts">Our Experts</a>
+        <a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors cursor-pointer" onclick="event.preventDefault(); document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'});" href="#contact">Contact &amp; Visit</a>
+      </div>
+
+      <!-- Desktop & Tablet Actions -->
+      <div class="hidden md:flex items-center space-x-4">
+        <a class="p-2 text-gray-400 hover:text-primary transition-colors rounded-full hover:bg-surface-container-low" href="tel:9514379569" aria-label="Call JC Dental Clinic">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </a>
+        <button class="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-secondary transition-colors shadow-sm shadow-primary/30 flex items-center gap-2" onclick="openBookingModal('General Consultation');">
+          Book Appointment
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </button>
+      </div>
+
+      <!-- Mobile Controls Right (Call Shortcut, Compact Book CTA & Hamburger Menu Toggle) -->
+      <div class="flex md:hidden items-center gap-2">
+        <a class="p-2 text-primary rounded-full hover:bg-surface-container-low transition-colors" href="tel:9514379569" aria-label="Call JC Dental Clinic">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </a>
+        <button class="bg-primary text-white px-3 py-1.5 rounded-full text-xs font-medium hover:bg-secondary transition-colors shadow-sm" onclick="openBookingModal('General Consultation');">
+          Book
+        </button>
+        <button id="mobile-menu-btn" aria-expanded="false" aria-label="Toggle navigation menu" class="p-2 rounded-xl text-gray-700 hover:text-primary hover:bg-gray-100 focus:outline-none transition-colors">
+          <svg id="mobile-hamburger-icon" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          </svg>
+          <svg id="mobile-close-icon" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Dropdown Menu -->
+  <div id="mobile-nav-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-xl px-6 py-5 flex-col space-y-4">
+    <div class="flex flex-col space-y-3 pb-4 border-b border-gray-100">
+      <a class="mobile-nav-link text-base font-semibold text-gray-800 hover:text-primary transition-colors py-1 flex items-center justify-between" href="#services">
+        <span class="">Services</span>
+        <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+      </a>
+      <a class="mobile-nav-link text-base font-semibold text-gray-800 hover:text-primary transition-colors py-1 flex items-center justify-between" href="#stories">
+        <span class="">Stories</span>
+        <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+      </a>
+      <a class="mobile-nav-link text-base font-semibold text-gray-800 hover:text-primary transition-colors py-1 flex items-center justify-between" href="#experts">
+        <span class="">Our Experts</span>
+        <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+      </a>
+      <a class="mobile-nav-link text-base font-semibold text-gray-800 hover:text-primary transition-colors py-1 flex items-center justify-between" href="#contact">
+        <span class="">Contact &amp; Visit</span>
+        <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+      </a>
+    </div>
+    <div class="flex flex-col gap-3 pt-1">
+      <a class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border border-gray-200 text-gray-800 hover:text-primary text-sm font-semibold bg-gray-50/50" href="tel:9514379569">
+        <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        Call +91 95143 79569
+      </a>
+      <button id="mobile-menu-book-btn" class="w-full bg-primary text-white py-3 rounded-xl text-sm font-semibold hover:bg-secondary transition-colors shadow-sm shadow-primary/30 flex items-center justify-center gap-2 active:scale-95">
+        <span class="">Book Appointment</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+<!-- END: Navigation -->
+<main class="pt-28 pb-0">
+<!-- BEGIN: Hero Section -->
+<section class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 mb-32">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Content -->
+<div class="lg:col-span-6 lg:pr-12 pt-10 flex flex-col justify-center h-full">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low text-primary text-sm font-medium mb-6 w-fit">
+<svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            4.8 Stars on Google Reviews
+          </div>
+<h1 class="text-5xl lg:text-7xl font-light text-gray-900 leading-[1.1] tracking-tight mb-6">
+            SMILE <br>
+<span class="font-bold">BRIGHTER WITH US</span>
+</h1>
+<p class="text-xl text-gray-500 mb-12 max-w-lg font-light">
+            Comprehensive dental care tailored for you. From routine checkups to advanced smile designing.
+          </p>
+<!-- Floating Info Cards Container -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-auto">
+<!-- Small Image Card -->
+<div class="rounded-3xl overflow-hidden relative group h-48 sm:h-auto">
+<img alt="Clinic Interior" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5xlzSLshETKsui0fA3ix7NbEwp__vslVZxP_dcUndFjfGDeWixbI38d-b6LhjH6AimduOUd3UneHFs-KiDNfgBdYvqeVKbjVJahTj9hp85NzJnTIFSHG1qQwhXjyDZcJLCIhokWq7twGb_MmYaGo_77y-e2Vw9vUradTBk85OuJX58xa-YKLPCasYr160wj4rLRrB3VkDgcylhsOHnC_t5wYj7vb54UP1r0qV2jzv6F8lZ7lWY-OlhNlT8prR8MwvHg">
+</div>
+<!-- Dark Info Card -->
+<div class="bg-secondary text-white p-8 rounded-4xl flex flex-col justify-between shadow-xl shadow-secondary/20">
+<div>
+<h3 class="text-xl font-medium mb-2">Expert Care</h3>
+<p class="text-blue-200 text-sm font-light leading-relaxed">
+                  Every smile is unique. Your treatment plan is customized by our expert team.
+                </p>
+</div>
+<div class="mt-8 text-xs uppercase tracking-wider text-blue-300">
+                Advanced Technology, Guided by Expertise
+              </div>
+</div>
+</div>
+<!-- Bottom Wide Card -->
+<div class="mt-4 bg-surface-container-low rounded-4xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+<div class="flex-1">
+<h4 class="text-lg font-medium text-gray-900 mb-2">Created for your comfort</h4>
+<p class="text-sm text-gray-600">State-of-the-art treatments designed through precise digital planning focused on comfort, accuracy, and real-life results.</p>
+</div>
+<button class="bg-white text-gray-900 px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors shadow-sm flex items-center gap-2 whitespace-nowrap" onclick="openBookingModal('General Consultation');">
+              Consultation
+              <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+</div>
+<!-- Right Content (Hero Image) -->
+<div class="lg:col-span-6 relative h-[600px] lg:h-[800px] rounded-[3rem] overflow-hidden shadow-2xl">
+<img alt="Dental clinic treatment procedure with Dr. Desmen and patient at JC Dental Clinic" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR37_hRMEvuUv8n963c_oJX9zwMJico1aMGenHwHuNofvXgD_-RZ0LI9oCyj3LbqnfnEl8UZkdC60utlIS2b4eN8M3nDygjaxz2tbI0K3dbOOXBih-on6DepvfimbJz2bK-GS7I2R6XLMeH9htXFKC9lqsRpFq0mgdXsz9YjuUDUJZLAMM13TXuMJ2qAJKxmRfwYK-bNHfNJ9K0ZYB3qj5FfkzgbmF_OBer_uWFO4Emll-bzDcpcDsc-afgkELZEFwPw">
+<!-- Glass Overlay for Process -->
+<div class="absolute bottom-8 right-8 left-8 sm:left-auto sm:w-80 glass-panel rounded-3xl p-6 shadow-lg">
+<p class="text-xs uppercase tracking-widest text-gray-600 mb-2 font-medium">The Process</p>
+<h4 class="text-xl font-light text-gray-900 mb-4">HOW<br>IT WORKS</h4>
+<a class="inline-flex items-center text-sm font-medium text-primary hover:text-secondary group" href="#process">
+              WATCH VIDEO 
+              <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Hero Section -->
+<!-- BEGIN: Main Feature Section -->
+<section class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 mb-40">
+<div class="flex flex-col lg:flex-row items-center justify-between gap-12 mb-20">
+<div class="w-full lg:w-1/4">
+<p class="text-sm text-gray-500 font-medium leading-relaxed">
+            Innovative orthodontics developed through digital planning
+          </p>
+</div>
+<div class="w-full lg:w-1/2 text-center">
+<h2 class="text-4xl lg:text-6xl font-light text-gray-900 leading-tight">
+            ADVANCED <span class="font-bold">DENTAL</span><br>
+<span class="font-bold">CARE</span>
+</h2>
+</div>
+<div class="w-full lg:w-1/4 text-right">
+<p class="text-sm text-gray-500 font-medium leading-relaxed">
+            A modern approach that improves comfort, precision, and real-life results.
+          </p>
+</div>
+</div>
+<div class="relative min-h-[600px] flex items-center justify-center">
+<!-- Abstract Centerpiece -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
+<svg class="w-full max-w-2xl h-auto text-primary" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<path d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,80.7,-46.1C89.6,-33.1,94.4,-16.6,92.5,-1.1C90.5,14.4,81.8,28.8,71.6,40.6C61.4,52.4,49.7,61.6,36.5,69.5C23.3,77.4,8.6,84,-6.4,85.1C-21.3,86.2,-36.5,81.8,-50.2,74C-63.9,66.2,-76.1,55,-84.6,41.1C-93.1,27.2,-97.9,10.6,-96.2,-5.3C-94.5,-21.2,-86.3,-36.4,-75.4,-48.6C-64.5,-60.8,-50.9,-70,-36.4,-75.8C-21.9,-81.6,-6.5,-84.1,8.3,-82C23.1,-79.9,44.7,-76.4,44.7,-76.4Z" fill="currentColor" transform="translate(100 100)"></path>
+</svg>
+</div>
+<div class="absolute inset-0 flex items-center justify-center z-0 pointer-events-none">
+<img alt="3D Tooth Model" class="h-80 w-auto object-contain drop-shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCle2lzYPTXHYmvoB5wopR6lGBN2L8iX4JNqM3nw_FlKH1B9FW1o_55tlGjm8KZH3SixxtWo5JNMZ8n3VGvLYCUGk-ITu3f7tNh7DNIf5OL1mvGIy4bB6wW_xohCPbgJEpwm-K55yC7CMzoufXMRmVHx7B_Hs72D3iKYUfE1VJWse9RSloWOAdaF9OznQ0JVjj-btweSLA-vCnwfxQu-eT1_mNWsKyaPHNI6EACZe0Op_mP23LAVoV61_kqKZuovd0V-w">
+</div><div class="z-10 grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl items-center">
+<!-- Left Stats -->
+<div class="space-y-12">
+<div>
+<div class="text-4xl font-bold text-gray-900 mb-1">98%</div>
+<div class="text-sm text-gray-500 mb-4">Treatment Accuracy</div>
+<img alt="Dental Tech" class="w-32 rounded-xl mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQIvFQ6LSrl226mClJJ-wd2jBF9vDRmcU_StRC6bsgWJVmxbLR0U2FkzlNeJFPdns9MfJGY3Z5UKmjUyURAtWxHsQOj3gbJY9GANooMugeRVZmJMFJ7_sBVypfZK_MHmcrwSri-ddrZDiFUsDUg3dy6N_e5JOCELwoKXeynPRKR6x-Pfwu9kkF2MzYhMXf4BW1_sqQeHLdanuoVXHH04M_l9_9Tj_yAvJku6eQI7qZuLrXFL9q6Qo">
+</div>
+<div>
+<div class="text-4xl font-bold text-gray-900 mb-1">1,200+</div>
+<div class="text-sm text-gray-500 mb-4">Smiles Designed</div>
+<img alt="Happy Patient" class="w-32 rounded-xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ7lJTttIcuTa4nnTZKRG4XpqCA9n4pjRcXZ2JO5fM7J0wcPyPREccHi3VlIa251wbu6f5eR8SPbqZolhUIQnM_xpZMqfQlFkDleonEElDlpSD9W9Jh6FdHsnMhfIxXvAwR3c06bYJTG_zCeaZLX_lKw8htMrTsHafh6SlxQKvAfKBOptb-2S5psqnOWTi_S94SBRUs6fMviiJ3XqgKJ26q6mOy3ZhgnthTiuNLS2b1F7Z3Mx_ehx3">
+</div>
+<p class="text-xs text-gray-500 mt-8 max-w-[200px]">
+              Created by orthodontic specialists using digital technologies. A system built for precision, aesthetics, and everyday comfort.
+            </p>
+</div>
+<!-- Center Large Text -->
+<div class="text-center col-span-1 md:col-span-1 relative">
+<!-- Placeholder for central large 3D object/image from original design -->
+<div class="w-full h-[400px] bg-gradient-to-b from-surface-container-high to-transparent rounded-full opacity-30 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-10 blur-3xl"></div>
+</div>
+<!-- Right Title & Sub -->
+<div class="text-right flex flex-col justify-center h-full">
+<h2 class="text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-8">
+              ORTHODONTIC<br>
+<span class="font-bold">TREATMENT +</span>
+</h2>
+<div class="text-xs uppercase tracking-widest text-gray-500 font-medium">
+              Digital Orthodontics
+            </div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Main Feature Section -->
+<!-- BEGIN: Services Section -->
+<section class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 mb-32" id="services" style="scroll-margin-top: 5.5rem;">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div>
+<h2 class="text-3xl lg:text-4xl font-light text-gray-900 leading-tight">
+            Dental<br>
+<span class="font-bold">Services</span>
+</h2>
+</div>
+<div class="max-w-md">
+<p class="text-sm text-gray-500">We provide a complete range of dental solutions powered by digital planning and medical expertise.</p>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-white border border-gray-200 text-gray-900 px-6 py-2.5 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors shadow-sm flex items-center gap-2" onclick="openBookingModal('Services Consultation');">
+            Consultation
+            <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+</div>
+<!-- Horizontal Scrollable Cards Container -->
+<div class="flex overflow-x-auto pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 gap-6 snap-x snap-mandatory hide-scrollbar scroll-smooth" id="services-carousel" style="scroll-behavior: smooth; overflow-x: auto; scroll-snap-type: x mandatory;">
+<!-- Service Card 1: Root Canal Treatment -->
+<div class="w-[320px] md:w-[360px] flex-shrink-0 snap-start bg-surface-container-low rounded-4xl p-7 flex flex-col h-[500px] group relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+<div class="relative h-48 w-full rounded-3xl overflow-hidden mb-5 flex-shrink-0">
+<img alt="Root Canal Treatment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLMOv96RGvsr0ZjEsp4oFxSyecTZaq5R32okaKtJu-EFV9OfAKfzLR7AEUvtHPozAgwhIJqvUPyoeBIpnlzNx64a1S3MpDol5DWfcbfSAvAqQ-WYlrMQtmWsu_poIU1FqRaiPqHFrBSmgMpGRCjHG58M_UlqvLz-IowKd9vlR3msjBphlaqVJT84IgK5msvGDBUvD2gcBY3Wsb6Lur4fDwVElhEF0Ex-KPKeqhPaS-sNj97UPHD1HH">
+<span class="absolute top-3 left-3 px-3 py-1 bg-white/80 backdrop-blur-md rounded-full text-xs font-semibold text-primary">Endodontics</span>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-2 leading-snug">Root Canal Treatment</h3>
+<p class="text-sm text-gray-600 mb-4 line-clamp-3 leading-relaxed">Advanced endodontic therapy using precision microscopy and digital apex locators to save your natural tooth painlessly.</p>
+<div class="mt-auto pt-4 border-t border-gray-200/60 flex justify-between items-center">
+<div>
+<span class="text-[11px] uppercase tracking-wider text-gray-400 block font-medium">Starting from</span>
+<span class="font-bold text-sm text-gray-900">Consultation</span>
+</div>
+<a class="text-xs font-bold uppercase tracking-wider text-gray-900 group-hover:text-primary transition-colors flex items-center gap-1" href="#contact" onclick="event.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); history.pushState(null, null, '#contact');">
+      Learn More
+      <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+<!-- Service Card 2: Smile Designing -->
+<div class="w-[320px] md:w-[360px] flex-shrink-0 snap-start rounded-4xl p-7 flex flex-col h-[500px] group relative overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+<img alt="Smile Designing" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2YRKETm4oho07BJfi09WNORtOoKICFnjF70jq-ZLTmob5FRhCJmECXJPua62rSAEKhTe8PIVF7OW2-RKZdjctsbRh51OtScIHJZHbdRBg9Pv15FBd3MOl0-RwCMW5N2U128fKXR5XiJyY9zFTU6gX3ZMvWB9Cd5-6iTg0s4xu6JMXx3mGSXGx3poLbTxcZWJTgwxTMPYaNvHYKbTWaSY-O8Qk1yskDF1_s_RUTWoEHftExChPOetR">
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20"></div>
+<div class="relative z-10 flex justify-between items-center mb-auto">
+<span class="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs text-white font-medium">Cosmetic</span>
+<span class="text-xs text-white/80 font-medium">Bespoke</span>
+</div>
+<div class="relative z-10 mt-auto">
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="px-2.5 py-0.5 bg-white/20 backdrop-blur-md rounded-full text-[11px] text-white">Veneers</span>
+<span class="px-2.5 py-0.5 bg-white/20 backdrop-blur-md rounded-full text-[11px] text-white">Digital Design</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-2 leading-snug">Smile Designing</h3>
+<p class="text-sm text-white/80 mb-5 line-clamp-3 leading-relaxed">Digital smile design, porcelain veneers, and bespoke aesthetic contouring for your dream smile.</p>
+<div class="pt-4 border-t border-white/20 flex justify-between items-center">
+<div>
+<span class="text-[11px] uppercase tracking-wider text-white/60 block font-medium">Status</span>
+<span class="font-bold text-sm text-white">Available</span>
+</div>
+<a class="text-xs font-bold uppercase tracking-wider text-white hover:text-white/80 transition-colors flex items-center gap-1" href="#contact" onclick="event.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); history.pushState(null, null, '#contact');">
+        Learn More
+        <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+</div>
+<!-- Service Card 3: Dental Implants -->
+<div class="w-[320px] md:w-[360px] flex-shrink-0 snap-start bg-surface-container-low rounded-4xl p-7 flex flex-col h-[500px] group relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+<div class="relative h-48 w-full rounded-3xl overflow-hidden mb-5 flex-shrink-0 bg-white">
+<img alt="Dental Implants" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8zp9lIW4P71JQ5HmaKE7csDTCKfLg1X73y7Frp2e0MJrus4Vlst0QsGf-R8e0g33cakc8xpSLV2uaa09x6oBxa_U5PDosWw0leTE4bqU6_avy2LmRBX3fCNvXxcjDT-W-JjL_wqWTKiRUbygsF8nUI9PAX5llPENhKgkF2Tj0-glohp9U40Yr0KA6RdKdUJm043bedJQeQSgsh3G310Qtw3NohxpHSvpH71Rpd-UuKidHLeVydoBd">
+<span class="absolute top-3 left-3 px-3 py-1 bg-white/80 backdrop-blur-md rounded-full text-xs font-semibold text-primary">Implantology</span>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-2 leading-snug">Dental Implants</h3>
+<p class="text-sm text-gray-600 mb-4 line-clamp-3 leading-relaxed">Permanent titanium &amp; zirconia implants restoring full biting strength and natural dental aesthetics.</p>
+<div class="mt-auto pt-4 border-t border-gray-200/60 flex justify-between items-center">
+<div>
+<span class="text-[11px] uppercase tracking-wider text-gray-400 block font-medium">Starting from</span>
+<span class="font-bold text-sm text-gray-900">Custom Plan</span>
+</div>
+<a class="text-xs font-bold uppercase tracking-wider text-gray-900 group-hover:text-primary transition-colors flex items-center gap-1" href="#contact" onclick="event.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); history.pushState(null, null, '#contact');">
+      Learn More
+      <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+<!-- Service Card 4: Orthodontic Treatment -->
+<div class="w-[320px] md:w-[360px] flex-shrink-0 snap-start bg-surface-container-low rounded-4xl p-7 flex flex-col h-[500px] group relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+<div class="relative h-48 w-full rounded-3xl overflow-hidden mb-5 flex-shrink-0">
+<img alt="Orthodontic Treatment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXQygmmIJ9oruU1Q8D8nnfQiOB9Wums2GLT2gsCzsmW1FufgaSPTwkL3RlNFXqDJZzcMDP1twLhu7__HycjUuiJ50aeFUHZwggDa4PqEClAxSVtQsGziwMl7gofFQ48rOZfi2_UB8lD2BpEAduuH9dYiw1ciWM9cD2sMHXPAui7xJdpw8clYrtrjoV3Z75I8q-vHLRxOJfpkq6WmjalsNw8Erbo7Tsqiy45l23zaHPim8ecchuDUb0">
+<span class="absolute top-3 left-3 px-3 py-1 bg-white/80 backdrop-blur-md rounded-full text-xs font-semibold text-primary">Orthodontics</span>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-2 leading-snug">Orthodontic Treatment</h3>
+<p class="text-sm text-gray-600 mb-4 line-clamp-3 leading-relaxed">Custom clear aligners and discreet ceramic bracket systems tailored for teens and adults.</p>
+<div class="mt-auto pt-4 border-t border-gray-200/60 flex justify-between items-center">
+<div>
+<span class="text-[11px] uppercase tracking-wider text-gray-400 block font-medium">Status</span>
+<span class="font-bold text-sm text-gray-900">Clear Aligners</span>
+</div>
+<a class="text-xs font-bold uppercase tracking-wider text-gray-900 group-hover:text-primary transition-colors flex items-center gap-1" href="#contact" onclick="event.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); history.pushState(null, null, '#contact');">
+      Learn More
+      <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+<!-- Service Card 5: Dental Crowns & Bridges -->
+<div class="w-[320px] md:w-[360px] flex-shrink-0 snap-start bg-surface-container-low rounded-4xl p-7 flex flex-col h-[500px] group relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+<div class="relative h-48 w-full rounded-3xl overflow-hidden mb-5 flex-shrink-0 bg-white">
+<img alt="Dental Crowns &amp; Bridges" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1P6Hvx0prY8zy3KR0RgIPzDhZNkEdztUsmJgVEGZN7JN8L_Yb6-7pu638PozrXcNiUc7WOId_ibBFPCtGUwa-X4AaigKqIW_sB5-_l4PM9tHKGo0rvqn9O1iW94Otnhg2tdbwmCKfpaJFAuPOx9tz0UOIRQDRj4KiD84YdDhSWLLNLe5jRRedoiRhXMP_j7L5A33hpc_eYWdYnW75RGPSHbQg3DwV6DE7nVrA24a08WGnCLU19DsY">
+<span class="absolute top-3 left-3 px-3 py-1 bg-white/80 backdrop-blur-md rounded-full text-xs font-semibold text-primary">Restorative</span>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-2 leading-snug">Dental Crowns &amp; Bridges</h3>
+<p class="text-sm text-gray-600 mb-4 line-clamp-3 leading-relaxed">Ultra-durable, natural-looking monolithic zirconia and ceramic restorations to protect damaged teeth.</p>
+<div class="mt-auto pt-4 border-t border-gray-200/60 flex justify-between items-center">
+<div>
+<span class="text-[11px] uppercase tracking-wider text-gray-400 block font-medium">Material</span>
+<span class="font-bold text-sm text-gray-900">Zirconia / Ceramic</span>
+</div>
+<a class="text-xs font-bold uppercase tracking-wider text-gray-900 group-hover:text-primary transition-colors flex items-center gap-1" href="#contact" onclick="event.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); history.pushState(null, null, '#contact');">
+      Learn More
+      <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+<!-- Service Card 6: Teeth Whitening -->
+<div class="w-[320px] md:w-[360px] flex-shrink-0 snap-start bg-surface-container-low rounded-4xl p-7 flex flex-col h-[500px] group relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+<div class="relative h-48 w-full rounded-3xl overflow-hidden mb-5 flex-shrink-0">
+<img alt="Teeth Whitening" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDk7vZ45KecUd50WOkefpqzZpw9TrM7kc76_fxzzKnoJhAkMxSyp-qfP9yFQBFXVyRIa8Y0PEViDkFLC4l41XJtFeOMRoO2WBqiAz-12rJ299o8h854yVWeYYfFZdIQIi084Uzfv9bJQXZbxdh4cIibUHNMVpAJSOSNZ7kCZ8YznJ3Ep6yeZ3y-s67Fo_jBRHqGSnkIeGlPdg4MYsxdOFPBBl1C_nzAT1tCRWbj0j9ZwVuhWs66IACa">
+<span class="absolute top-3 left-3 px-3 py-1 bg-white/80 backdrop-blur-md rounded-full text-xs font-semibold text-primary">Laser Care</span>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-2 leading-snug">Teeth Whitening</h3>
+<p class="text-sm text-gray-600 mb-4 line-clamp-3 leading-relaxed">High-precision in-office laser whitening treatment delivering up to 8 shades brighter in a single visit.</p>
+<div class="mt-auto pt-4 border-t border-gray-200/60 flex justify-between items-center">
+<div>
+<span class="text-[11px] uppercase tracking-wider text-gray-400 block font-medium">Duration</span>
+<span class="font-bold text-sm text-gray-900">1 Hour Session</span>
+</div>
+<a class="text-xs font-bold uppercase tracking-wider text-gray-900 group-hover:text-primary transition-colors flex items-center gap-1" href="#contact" onclick="event.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); history.pushState(null, null, '#contact');">
+      Learn More
+      <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+<!-- Service Card 7: Child Dentistry (Pediatric) -->
+<div class="w-[320px] md:w-[360px] flex-shrink-0 snap-start bg-surface-container-low rounded-4xl p-7 flex flex-col h-[500px] group relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+<div class="relative h-48 w-full rounded-3xl overflow-hidden mb-5 flex-shrink-0">
+<img alt="Child Dentistry" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeyi5sZS8qyi1ge_3Ylwc2fj38piqL4rRfvd1ZOtjArrjAfhXxEVIZtjXfje84TlNoVhq3GOGMUakzHeltECwm51FyHQDJACJsStDyb-KuQLPdPdwLSRg7a2sTyr--Yaq52q7Hna7b0d0WqLTJk1aPA_fPK77fuiscApUCYn3J_hBmAoVwRmtJY7zpzZqq7SU73qWzRdW5FN_L6LGkiU72U6bIz3LYdOsVDm2AhfUTFQOapLqgOFbt">
+<span class="absolute top-3 left-3 px-3 py-1 bg-white/80 backdrop-blur-md rounded-full text-xs font-semibold text-primary">Pediatric</span>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-2 leading-snug">Child Dentistry</h3>
+<p class="text-sm text-gray-600 mb-4 line-clamp-3 leading-relaxed">Gentle, stress-free preventative and interceptive oral healthcare crafted specifically for young smiles.</p>
+<div class="mt-auto pt-4 border-t border-gray-200/60 flex justify-between items-center">
+<div>
+<span class="text-[11px] uppercase tracking-wider text-gray-400 block font-medium">Care</span>
+<span class="font-bold text-sm text-gray-900">Kid-Friendly</span>
+</div>
+<a class="text-xs font-bold uppercase tracking-wider text-gray-900 group-hover:text-primary transition-colors flex items-center gap-1" href="#contact" onclick="event.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); history.pushState(null, null, '#contact');">
+      Learn More
+      <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+<!-- Service Card 8: Dental Cleaning & Scaling -->
+<div class="w-[320px] md:w-[360px] flex-shrink-0 snap-start bg-surface-container-low rounded-4xl p-7 flex flex-col h-[500px] group relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+<div class="relative h-48 w-full rounded-3xl overflow-hidden mb-5 flex-shrink-0">
+<img alt="Dental Cleaning &amp; Scaling" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa2Rojly6_yx6rJ0pifAdIvd0oo4tLT3ukFo8nt33fzwmM3sMS9vIU9g__agOonHWBmzkaykr1pzdPOhGFWeUxfrPAM7uwr3dz5jiAIANo_R3EZjJwgF7kxB6HJwUP22dHFmY4h_n97WMNpmL7KNziddh0I530j8Bo8LgyNWGD_r_ZOKalfWr1CONa_qvceErPPxbCYtticn5rT5ujLkfv427zA3cLmhfdjU_Ygk0bZJgvbjCSQR5c">
+<span class="absolute top-3 left-3 px-3 py-1 bg-white/80 backdrop-blur-md rounded-full text-xs font-semibold text-primary">Preventative</span>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-2 leading-snug">Cleaning &amp; Scaling</h3>
+<p class="text-sm text-gray-600 mb-4 line-clamp-3 leading-relaxed">Ultrasonic piezo scaling, airflow stain removal, and comprehensive preventative gum therapy.</p>
+<div class="mt-auto pt-4 border-t border-gray-200/60 flex justify-between items-center">
+<div>
+<span class="text-[11px] uppercase tracking-wider text-gray-400 block font-medium">Routine</span>
+<span class="font-bold text-sm text-gray-900">Bi-Annual</span>
+</div>
+<a class="text-xs font-bold uppercase tracking-wider text-gray-900 group-hover:text-primary transition-colors flex items-center gap-1" href="#contact" onclick="event.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); history.pushState(null, null, '#contact');">
+      Learn More
+      <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+</div>
+<!-- Slider Controls -->
+<div class="flex justify-end gap-4 mt-8">
+<button aria-label="Previous services" class="p-3 rounded-full border border-gray-200 text-gray-600 hover:text-gray-900 hover:border-gray-900 transition-all hover:scale-105 active:scale-95" id="services-prev-btn">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<button aria-label="Next services" class="p-3 rounded-full border border-gray-900 bg-gray-900 text-white hover:bg-primary hover:border-primary transition-all hover:scale-105 active:scale-95 shadow-sm" id="services-next-btn">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+</section>
+<!-- BEGIN: Stories of Smile Section -->
+<section class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 mb-32" id="stories" style="scroll-margin-top: 5.5rem;" data-story-0-ramanadhan="Ramanadhan, 49 | Removable Partial Denture · 4 Visits" data-story-0-before="https://lh3.googleusercontent.com/aida-public/AB6AXuD6y4q_WXAny0IOiF7Fc1MYu_L9kNe7EpQEi3fqg_A78rzA5Jzg6EUkkdD74UYUu5N58A42gHzaQXa0R8kL01wPC4wIY1TuY9t-K5bk1SVMe4vp_nl6KHZw-LCf6vDZLENvEEOXufaiD7-ipzM1FBAvkNv61FMKmP_c6fUkvdYiB_v0Vo4Ae-N1IyP-Aj6YBBGfxq9dvS_Oik5H3PIfj2QAaZv6nBdAYKLm7Req7HzIShVBWeVSUJqrM8kOjwoA5RhI8w" data-story-0-after="https://lh3.googleusercontent.com/aida-public/AB6AXuCIZwldt8hJzpBHkfTbTtawFc1bmHwzJfA1xjwFjVlbNLFeZce4HWTxTk-Cy_nVE5dMuF9qWsPMur1rwBgFwFmnI7gSNHwAPz9CNDV20esLcHJR0cDrpdsU-3gWiPVHqnJRAHi-qtmVfb-E_aWg0oS2rKZnfciZlgBEopa3bWIuR7hhYyxEwgEjJwDaxImauP5eSoZkiZE3fLbYB8-haNIkG05tRUm-3I9a5eoCsqI3cbJF0IP1q12X_m4FjLPHnJdjIA"><div class="bg-[#f4f7fb] rounded-[3rem] p-6 sm:p-10 lg:p-16 border border-gray-100 shadow-sm">
+  <!-- Header -->
+  <div class="max-w-2xl mx-auto text-center mb-16">
+    
+    <h2 class="text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-4">
+      Stories of <span class="font-bold text-gray-900">Smile</span>
+    </h2>
+    <p class="text-gray-500 text-base sm:text-lg font-light leading-relaxed">
+      Real patients. Real transformations. Real confidence.
+    </p>
+  </div>
+
+  <!-- Main Featured Spotlight Card -->
+  <div class="bg-white rounded-[2.5rem] p-6 sm:p-10 lg:p-12 shadow-lg border border-gray-100 mb-16 relative overflow-hidden transition-all duration-300" id="featured-story-card"><div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <!-- Left: Interactive Before & After Visual Slider -->
+      <div class="lg:col-span-7 relative select-none">
+        <div class="relative rounded-3xl overflow-hidden aspect-[4/3] bg-gray-100 shadow-md" id="ba-container">
+          <!-- After Image (Background) -->
+          <img id="ba-after-img" alt="After smile transformation" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ7lJTttIcuTa4nnTZKRG4XpqCA9n4pjRcXZ2JO5fM7J0wcPyPREccHi3VlIa251wbu6f5eR8SPbqZolhUIQnM_xpZMqfQlFkDleonEElDlpSD9W9Jh6FdHsnMhfIxXvAwR3c06bYJTG_zCeaZLX_lKw8htMrTsHafh6SlxQKvAfKBOptb-2S5psqnOWTi_S94SBRUs6fMviiJ3XqgKJ26q6mOy3ZhgnthTiuNLS2b1F7Z3Mx_ehx3">
+          <span class="absolute top-4 right-4 px-3 py-1 bg-primary/95 backdrop-blur-md rounded-full text-white text-xs font-semibold uppercase tracking-wider shadow-sm z-10 pointer-events-none">After</span>
+
+          <!-- Before Image (Clipped Overlay) -->
+          <div id="ba-before-wrapper" class="absolute inset-0 overflow-hidden" style="width: 50%;">
+            <img id="ba-before-img" alt="Before smile transformation" class="absolute inset-0 h-full object-cover" style="width: 200%; max-width: none;" src="https://lh3.googleusercontent.com/aida/AEtjO1WVhR7_Sl4MaNmBCE0qVJsZqA-SX-1GS-s9WlFznl3lH2IKgHDSLnAZ9KwZXeAAzapz5JWOIWbE1A5Q-nazHNJhii429-zKmSkr4rSwgC81A6EAw2BzlquC9p-wzKI-hvpa4PPFyRfWTDYAFa4tnot3XLj5dtAeZlyijyjRsAOLhvIv7N4hXMQ0O2asG_BWxf_r917O5Yj8H8HGJtsIo26joRH1aAKcMzApiQAywhAZhbISXKdcnrVUtBM">
+            <span class="absolute top-4 left-4 px-3 py-1 bg-black/75 backdrop-blur-md rounded-full text-white text-xs font-semibold uppercase tracking-wider shadow-sm z-10 pointer-events-none">Before</span>
+          </div>
+
+          <!-- Split Line & Handle -->
+          <div id="ba-handle-line" class="absolute inset-y-0 w-0.5 bg-white shadow-2xl pointer-events-none z-20 flex items-center justify-center" style="left: 50%;">
+            <div class="w-9 h-9 rounded-full bg-white shadow-xl flex items-center justify-center text-primary border-2 border-primary/20 pointer-events-none -translate-x-1/2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 9l-4 3 4 3m8-6l4 3-4 3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+            </div>
+          </div>
+
+          <!-- Range Input Overlay for Dragging -->
+          <input aria-label="Before and After slider control" class="ba-slider-input absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30 m-0 p-0" id="ba-range-slider" max="100" min="0" type="range" value="50">
+        </div>
+        <p class="text-center text-xs text-gray-400 mt-3 font-medium">Drag or click the slider to compare Before &amp; After</p>
+      </div>
+
+      <!-- Right: Story Details & Testimonial -->
+      <div class="lg:col-span-5 flex flex-col justify-between h-full">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#e6ebfc] text-primary text-xs font-semibold">
+              <svg class="w-3.5 h-3.5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path clip-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path></svg>
+              <span id="featured-badge" class="">Verified Patient</span>
+            </div>
+            <div class="flex items-center text-yellow-400 text-sm gap-0.5">
+              <span class="">★★★★★</span>
+              <span class="text-xs font-bold text-gray-700 ml-1">5.0</span>
+            </div>
+          </div>
+
+          <h3 class="text-3xl font-bold text-gray-900 mb-1" id="featured-name">Rajesh K., 42</h3>
+          <p class="text-sm font-semibold text-primary mb-1" id="featured-treatment">Precision Implant &amp; Zirconia Crown</p>
+          <p class="text-xs text-gray-400 font-medium mb-6 uppercase tracking-wider" id="featured-duration">3 Visits • Guided Surgery</p>
+
+          <blockquote class="text-lg font-light text-gray-800 italic leading-snug mb-8 border-l-2 border-primary/40 pl-4" id="featured-quote">“Chewing feels completely natural again. Painless 3D computer-guided procedure and stellar staff.”</blockquote>
+        </div>
+
+        <!-- Navigation Dots & Counter -->
+        <div class="flex items-center justify-between pt-6 border-t border-gray-100">
+          <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider" id="featured-counter">Featured Story 3 of 3</span>
+          <div class="flex items-center gap-2">
+            <button aria-label="Story 1" class="story-dot h-2 rounded-full bg-gray-200 hover:bg-gray-300 w-2 transition-all" data-dot-idx="0"></button>
+            <button aria-label="Story 2" class="story-dot h-2 rounded-full bg-gray-200 hover:bg-gray-300 w-2 transition-all" data-dot-idx="1"></button>
+            <button aria-label="Story 3" class="story-dot h-2 rounded-full bg-primary w-7 transition-all" data-dot-idx="2"></button>
+          </div>
+        </div>
+      </div>
+    </div></div>
+
+  <!-- Bottom 3 Story Cards Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+    <!-- Card 1: Clear Aligners (Kavitha, 24) -->
+    <div class="story-card bg-white rounded-3xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between cursor-pointer group hover:-translate-y-1" data-story-index="0">
+      <div>
+        <div class="relative rounded-2xl overflow-hidden aspect-video mb-5 bg-gray-100">
+          <img alt="Ramanadhan - Removable Partial Denture" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDemJHeYe6hSRPPD-XB_7u0j4b_sDllgTrEVyOg8RkwXQXi6YYgjDJeCBTYuVBtO7ss2_JYsWRbKucRkLhsMDgdqux_uhnb8KY_1r6EtSEIGoiFYnMBgUY-inCvUXZngflsG4q5XVadTZTYYnxSZotHILnM_L02nQHTZk32kxhL3qmIAdvCuMpPaeZoFqztDrkiG1vOeSCoZLUJwUY_mz_sdcK7abPXCMdvpnbdxv_wwQS35PiO7-0VDMoJjpB2pPSSGw">
+          <span class="absolute top-3 left-3 px-2.5 py-1 bg-white/90 backdrop-blur-md rounded-full text-[11px] font-bold text-primary shadow-sm">Dentures</span>
+        </div>
+        <div class="flex items-center text-yellow-400 text-xs gap-0.5 mb-2">
+          <span class="">★★★★★</span>
+          <span class="text-[11px] font-semibold text-gray-500 ml-1">5.0</span>
+        </div>
+        <h4 class="text-lg font-bold text-gray-900 mb-1 group-hover:text-primary transition-colors">Ramanadhan, 49</h4>
+        <p class="text-xs text-primary font-semibold mb-3">Removable Partial Denture</p>
+        <p class="text-xs text-gray-600 leading-relaxed italic mb-4">
+          “Missing teeth made eating and smiling difficult for years. Dr. Desmen fitted me with a custom Removable Partial Denture over 4 visits — comfortable, natural-looking, and adjusted until it felt just right. Now I can chew freely and smile with real confidence again.”
+        </p>
+      </div>
+      <div class="pt-3 border-t border-gray-100 flex items-center justify-between">
+        <span class="text-[11px] text-gray-400 font-medium">4 Visits • Denture</span>
+        <span class="text-xs font-bold text-primary flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+          View Spotlight
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </span>
+      </div>
+    </div>
+
+    <!-- Card 2: Precision Implant (Rajesh K., 42) -->
+    <div class="story-card bg-white rounded-3xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between cursor-pointer group hover:-translate-y-1" data-story-index="2">
+      <div>
+        <div class="relative rounded-2xl overflow-hidden aspect-video mb-5 bg-gray-100">
+          <img alt="Rajesh K. - Dental Implant" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1WVhR7_Sl4MaNmBCE0qVJsZqA-SX-1GS-s9WlFznl3lH2IKgHDSLnAZ9KwZXeAAzapz5JWOIWbE1A5Q-nazHNJhii429-zKmSkr4rSwgC81A6EAw2BzlquC9p-wzKI-hvpa4PPFyRfWTDYAFa4tnot3XLj5dtAeZlyijyjRsAOLhvIv7N4hXMQ0O2asG_BWxf_r917O5Yj8H8HGJtsIo26joRH1aAKcMzApiQAywhAZhbISXKdcnrVUtBM">
+          <span class="absolute top-3 left-3 px-2.5 py-1 bg-white/90 backdrop-blur-md rounded-full text-[11px] font-bold text-primary shadow-sm">Implantology</span>
+        </div>
+        <div class="flex items-center text-yellow-400 text-xs gap-0.5 mb-2">
+          <span class="">★★★★★</span>
+          <span class="text-[11px] font-semibold text-gray-500 ml-1">5.0</span>
+        </div>
+        <h4 class="text-lg font-bold text-gray-900 mb-1 group-hover:text-primary transition-colors">Rajesh K., 42</h4>
+        <p class="text-xs text-primary font-semibold mb-3">Titanium Dental Implant</p>
+        <p class="text-xs text-gray-600 leading-relaxed italic mb-4">
+          “Chewing feels completely natural again. Painless 3D computer-guided procedure and stellar staff.”
+        </p>
+      </div>
+      <div class="pt-3 border-t border-gray-100 flex items-center justify-between">
+        <span class="text-[11px] text-gray-400 font-medium">3 Visits • Guided Surgery</span>
+        <span class="text-xs font-bold text-primary flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+          View Spotlight
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </span>
+      </div>
+    </div>
+
+    <!-- Card 3: Video Journey (Meera S., 31) -->
+    <div class="story-card bg-white rounded-3xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between cursor-pointer group hover:-translate-y-1" data-story-index="2">
+      <div>
+        <div class="relative rounded-2xl overflow-hidden aspect-video mb-5 bg-gray-100">
+          <img alt="Meera S. - Full Smile Rehabilitation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQBzE7u0__pskynb1BZXkgHvtiJKVwjy7SEWYGh4BmnHnBbL7JBdbMy24Xs0tXuacedC2EappYZAbwwJ0hrreI3t5xZkNSldI3DCr5hqrOM_cY_1MbWm3OFYCvE36Ycp8LsEjqJ7FWYlyi_CK2ahUim_XjBsNPD9_TDj-sX-2KpL4zgeSsP2RWDV0fsgC7qutOpUqRKHvNk9IZKBbl_aE0e4hy5JNBGDN4E8RyrobDL9_uySNGqvBqQkIixZ28QJv5fg">
+          <span class="absolute top-3 left-3 px-2.5 py-1 bg-white/90 backdrop-blur-md rounded-full text-[11px] font-bold text-primary shadow-sm">Full Smile Rehab</span>
+        </div>
+        <div class="flex items-center text-yellow-400 text-xs gap-0.5 mb-2">
+          <span class="">★★★★★</span>
+          <span class="text-[11px] font-semibold text-gray-500 ml-1">5.0</span>
+        </div>
+        <h4 class="text-lg font-bold text-gray-900 mb-1 group-hover:text-primary transition-colors">Meera S., 31</h4>
+        <p class="text-xs text-primary font-semibold mb-3">Full Mouth Rehabilitation</p>
+        <p class="text-xs text-gray-600 leading-relaxed italic mb-4">
+          “Overcame years of dental anxiety with Dr. Desmen. The custom crowns and aesthetic alignment gave me back my confident smile with zero pain.”
+        </p>
+      </div>
+      <div class="pt-3 border-t border-gray-100 flex items-center justify-between">
+        <span class="text-[11px] text-gray-400 font-medium">4 Visits • Full Rehab</span>
+        <span class="text-xs font-bold text-primary flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+          View Spotlight
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Consultation Banner Bar -->
+  <div class="bg-white rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 border border-gray-100 shadow-sm">
+    <div>
+      <h4 class="text-xl font-bold text-gray-900 mb-1">Ready to write your own story?</h4>
+      <p class="text-sm text-gray-500">Schedule your comprehensive consultation with our specialists in Melakrishnanputhoor.</p>
+    </div>
+    <button class="bg-primary text-white px-8 py-3.5 rounded-full text-sm font-medium hover:bg-secondary transition-colors shadow-sm shadow-primary/30 flex items-center gap-2 whitespace-nowrap active:scale-95" onclick="if(typeof openBookingModal==='function'){openBookingModal('Smile Transformation Consultation');}else{const c=document.getElementById('contact');if(c)c.scrollIntoView({behavior:'smooth'});}" type="button">
+      <span class="">Book Appointment</span>
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+    </button>
+  </div>
+</div></section><!-- BEGIN: Our Experts Section -->
+<section class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 mb-32" id="experts" style="scroll-margin-top: 5.5rem;">
+<!-- Section Header -->
+<div class="max-w-2xl mx-auto text-center mb-16">
+
+<h2 class="text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-4">
+      Meet Our <span class="font-bold">Experts</span>
+</h2>
+<p class="text-gray-500 text-base sm:text-lg font-light leading-relaxed">
+      Experienced hands, trusted care. Compassionate dentistry guided by recognized clinical specialists.
+    </p>
+</div>
+<!-- Main Feature: Dr. Desmen Borshiya C (Chief Dental Surgeon & Founder) -->
+<div class="bg-surface-container-low rounded-[2.5rem] p-6 sm:p-10 lg:p-12 border border-gray-100 shadow-lg mb-16 relative overflow-hidden group transition-all duration-300 hover:shadow-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+<!-- Portrait Side (Left) -->
+<div class="lg:col-span-5 relative">
+<div class="relative rounded-3xl overflow-hidden shadow-xl aspect-square w-full max-w-md mx-auto bg-white border-2 border-white/60">
+<img alt="Dr. Desmen Borshiya C, BDS - Chief Dental Surgeon &amp; Founder" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA64c5oq0A2dtq-2F2NCWRzJsV113WhQmVfzbhFIIfcJYrpJIZJMEJOu6XhZIL6YUiD4OSShUW8IDPbiYVH4MOspVGsfzEPAsGdrGxQeKYLCzV0EOHULGK--Gd-aFuRTu8ZGq6QfuPW_DX2z4-gItL_Bzkp_nvBFx3vTDkhH-njt0VpftVdF6E9qoVJvzKLfKcaJ3Uz8RQZqPKbn9j8tOt55_sCXzZz_f4UuI787msgpkCpx-kJLw7dtuZBEOYGE6m16Q">
+<div class="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 bg-white/90 backdrop-blur-md rounded-full text-xs font-semibold text-primary shadow-sm">
+<svg class="w-3.5 h-3.5 text-primary fill-current" viewBox="0 0 20 20">
+<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+</svg>
+            Practice Lead
+          </div>
+<div class="absolute bottom-4 right-4 inline-flex items-center gap-1 px-3 py-1 bg-primary text-white rounded-full text-xs font-semibold shadow-md">
+<span class="">10+ Years Experience</span>
+</div>
+</div>
+</div>
+<!-- Information Side (Right) -->
+<div class="lg:col-span-7 flex flex-col justify-center">
+<div class="flex flex-wrap items-center gap-2 mb-3">
+<span class="px-3 py-1 bg-primary text-white text-xs font-semibold rounded-full uppercase tracking-wider">
+            Chief Dental Surgeon &amp; Founder
+          </span>
+<span class="px-3 py-1 bg-white text-primary border border-primary/20 text-xs font-medium rounded-full">
+            Founder
+          </span>
+<span class="px-3 py-1 bg-white text-gray-600 border border-gray-200 text-xs font-medium rounded-full">
+            General &amp; Family Dentistry
+          </span>
+</div>
+<h3 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-2 leading-tight">
+          Dr. Desmen Borshiya C, <span class="text-primary font-medium text-2xl lg:text-3xl">BDS</span>
+</h3>
+<p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-6">
+          Chief Dental Surgeon • JC Dental Practice Founder
+        </p>
+<div class="border-l-2 border-primary/40 pl-5 mb-6">
+<p class="text-base text-gray-700 leading-relaxed font-light mb-4">
+            Began her career as a practicing dentist at Dr. Nelson Dental Clinic, Madurai — one of the busiest dental clinics in the region, treating an average of 50+ patients daily. Brought that high-volume, hands-on experience to found JC Dental Clinic 5 years ago, where she now leads the practice as Chief Dental Surgeon.
+          </p>
+<p class="text-sm text-gray-500 leading-relaxed font-light">
+            Her clinical philosophy blends compassionate chairside care with digital treatment workflows, ensuring every patient in Melakrishnanputhoor experiences gentle, accurate, and durable dental treatments.
+          </p>
+</div>
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<button type="button" onclick="openBookingModal('Consultation with Dr. Desmen Borshiya');" class="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-secondary transition-colors shadow-sm shadow-primary/30 inline-flex items-center gap-2 active:scale-95 cursor-pointer"><span class="">Book With Dr. Desmen</span><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button>
+<div class="flex items-center gap-2 text-xs text-gray-500 font-medium">
+<svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path>
+</svg>
+            Registration Verified &amp; On-Premise Practice Head
+          </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Consulting Specialists Sub-Header -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+<div>
+<h3 class="text-2xl font-bold text-gray-900 leading-snug">Consulting Specialists</h3>
+<p class="text-sm text-gray-500">Renowned visiting consultants delivering specialized hospital-grade procedures</p>
+</div>
+<div class="text-xs font-semibold uppercase tracking-wider text-gray-400 bg-gray-50 px-3.5 py-1.5 rounded-full w-fit border border-gray-200">
+      2 Specialists on Board
+    </div>
+</div>
+<!-- Specialists Two-Column Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+<!-- Specialist 1: Dr. G Suresh Kumar -->
+<div class="bg-white rounded-3xl p-6 sm:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+<div>
+<div class="flex items-start gap-5 mb-5">
+<div class="relative flex-shrink-0">
+<img alt="Dr. G Suresh Kumar" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover ring-4 ring-gray-100 shadow-md group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbg_ZWmDgtKJGhZTbdJ5jgDB3EsF9JU7N4BACrdY6T_VvJ-wxYU21r15Q2gVdXEa_vbCCrjiSiKPfvMuQjHIngmP27OJ6goAoCGuQXolaQnZrSqQ3Hr86gvsdh8kqAo01Y8HIz-JLAip-cNul8q7pPokB_5EMnoIyAwkMGkmG7Oj_nsthTk_BhLDFQkZWDXEEOLliv4WJ-ZjPiD2TVklvQXLXzeo9jfzuFQqa17Asdu44PLVwlh8Ng5dWGIYbBUHWNig">
+<span class="absolute bottom-0 right-0 w-4 h-4 bg-emerald-500 border-2 border-white rounded-full" title="Available Consultant"></span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-1.5 mb-1.5">
+<span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-[11px] font-semibold uppercase tracking-wider">Consultant</span>
+<span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full text-[11px] font-medium">Verified ✓</span>
+</div>
+<h4 class="text-xl font-bold text-gray-900 leading-tight mb-1">Dr. G Suresh Kumar</h4>
+<p class="text-xs font-medium text-primary mb-2">Oral &amp; Maxillofacial Surgeon, MDS</p>
+<span class="inline-flex items-center gap-1 text-xs font-semibold text-gray-700 bg-surface-container-low px-2.5 py-1 rounded-full">
+<svg class="w-3.5 h-3.5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+</svg>
+              28+ Years Experience
+            </span>
+</div>
+</div>
+<div class="flex flex-wrap gap-1.5 mb-4">
+<span class="px-2.5 py-0.5 bg-gray-50 border border-gray-200 text-[11px] text-gray-600 rounded-md font-medium">Oral &amp; Maxillofacial Surgery</span>
+<span class="px-2.5 py-0.5 bg-gray-50 border border-gray-200 text-[11px] text-gray-600 rounded-md font-medium">Advanced Impactions</span>
+</div>
+<p class="text-sm text-gray-600 leading-relaxed font-light mb-3">
+          One of the region's top maxillofacial surgeons with extensive hospital and clinical trauma management expertise.
+        </p>
+<!-- Expandable Bio Accordion -->
+<div class="hidden text-xs text-gray-600 leading-relaxed font-light p-4 bg-gray-50 rounded-2xl border border-gray-100 mb-3 space-y-2 doctor-bio-content">
+<p class="">A highly experienced dental surgeon with 28 years in practice, recognized as one of the top oral &amp; maxillofacial surgeons serving Thirunelveli and Nagercoil.</p>
+<p class="">Also practices at Sree Dental, Hair and Skin Cosmetic Clinic, Madurai. Medical registration verified.</p>
+</div>
+</div>
+<div class="pt-4 border-t border-gray-100 flex items-center justify-between mt-auto">
+<button class="doctor-bio-toggle text-xs font-semibold text-primary hover:text-secondary flex items-center gap-1 transition-colors">
+<span class="toggle-text">Read Full Bio / Credentials</span>
+<svg class="w-3.5 h-3.5 transform transition-transform duration-300 toggle-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<span class="text-[11px] text-gray-400">Consulting by Appointment</span>
+</div>
+</div>
+<!-- Specialist 2: Dr. Gnana Seelan, MDS -->
+<div class="bg-white rounded-3xl p-6 sm:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+<div>
+<div class="flex items-start gap-5 mb-5">
+<div class="relative flex-shrink-0">
+<img alt="Dr. Gnana Seelan, MDS" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover ring-4 ring-gray-100 shadow-md group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq08VI3SnqHfOyAO0UDx3gE2EouHlIvP-h4w2_X5dQYhhaitjcppUvkurj8eNDTIH4yAqD_hDpxCQdu_CZ7_lKr3uFUgr9IVzAQqG707D4xhP6OdMwzsjbmXOGNaO2RnEw6mRQSnTf028aW013y06Ia2Lo1bkd32xrq5Vs-cDqh3s0jPn9ZhFdTc20lZCdvQm5jLg_slKvlHb3BNWmJ6Fzvx4PfDfdLNlMZXc0wRsn0F6anvMyjiDwpo166y87xHZsKA">
+<span class="absolute bottom-0 right-0 w-4 h-4 bg-emerald-500 border-2 border-white rounded-full" title="Available Consultant"></span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-1.5 mb-1.5">
+<span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-[11px] font-semibold uppercase tracking-wider">Consultant</span>
+<span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full text-[11px] font-medium">Specialist</span>
+</div>
+<h4 class="text-xl font-bold text-gray-900 leading-tight mb-1">Dr. Gnana Seelan, MDS</h4>
+<p class="text-xs font-medium text-primary mb-2">Endodontist (Consultant)</p>
+<span class="inline-flex items-center gap-1 text-xs font-semibold text-gray-700 bg-surface-container-low px-2.5 py-1 rounded-full">
+<svg class="w-3.5 h-3.5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+</svg>
+              16+ Years Experience
+            </span>
+</div>
+</div>
+<div class="flex flex-wrap gap-1.5 mb-4">
+<span class="px-2.5 py-0.5 bg-gray-50 border border-gray-200 text-[11px] text-gray-600 rounded-md font-medium">Root Canal &amp; Endodontics</span>
+<span class="px-2.5 py-0.5 bg-gray-50 border border-gray-200 text-[11px] text-gray-600 rounded-md font-medium">Microscopic Endodontics</span>
+</div>
+<p class="text-sm text-gray-600 leading-relaxed font-light mb-3">
+          Specialist in pain-free root canal therapy, complex re-treatments, and tooth-saving endodontic procedures.
+        </p>
+<!-- Expandable Bio Accordion -->
+<div class="hidden text-xs text-gray-600 leading-relaxed font-light p-4 bg-gray-50 rounded-2xl border border-gray-100 mb-3 space-y-2 doctor-bio-content">
+<p class="">A highly skilled dental doctor with over 16 years of clinical experience, specializing in endodontics and root canal therapy.</p>
+<p class="">Dedicated to providing pain-free, compassionate care to every patient, with precision rotary instrumentation and microscopic apex tracking.</p>
+</div>
+</div>
+<div class="pt-4 border-t border-gray-100 flex items-center justify-between mt-auto">
+<button class="doctor-bio-toggle text-xs font-semibold text-primary hover:text-secondary flex items-center gap-1 transition-colors">
+<span class="toggle-text">Read Full Bio / Credentials</span>
+<svg class="w-3.5 h-3.5 transform transition-transform duration-300 toggle-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<span class="text-[11px] text-gray-400">Consulting by Appointment</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Our Experts Section -->
+<!-- END: Stories of Smile Section -->
+<!-- BEGIN: Contact & Visit Us Section -->
+<section class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 mb-24" id="contact" style="scroll-margin-top: 5.5rem;">
+  <!-- Header -->
+  <div class="max-w-2xl mx-auto text-center mb-12">
+    
+    <h2 class="text-4xl lg:text-5xl font-light text-gray-900 leading-tight mb-3">
+      Let's Get You <span class="font-bold text-primary">Smiling</span>
+    </h2>
+    <p class="text-gray-500 text-base sm:text-lg font-light leading-relaxed">
+      Reach out to book your comprehensive consultation or walk in to experience modern, gentle dental care.
+    </p>
+  </div>
+
+  <div class="space-y-8">
+    <!-- ROW 1: Quick Form Card + Google Ratings Showcase -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+      <!-- LEFT: Quick Contact Form Card -->
+      <div class="bg-white rounded-3xl p-6 sm:p-10 border border-gray-200/80 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+        <div>
+          <div class="mb-6">
+            <h3 class="text-2xl sm:text-3xl font-bold text-primary mb-2">Let's Get You Smiling</h3>
+            <p class="text-sm text-gray-500 font-light">Send us a message and we'll get back to you shortly.</p>
+          </div>
+          <form class="space-y-4" id="contact-appointment-form" onsubmit="handleFormSubmission(event, 'Contact Form')">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-gray-700 mb-1.5">Name *</label>
+                <input id="contact-name" name="name" class="w-full text-sm px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-gray-50/50" placeholder="e.g. Anand Kumar" required="" type="text">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-gray-700 mb-1.5">Phone Number *</label>
+                <input id="contact-phone" name="phone" class="w-full text-sm px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-gray-50/50" placeholder="e.g. +91 98765 43210" required="" type="tel">
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 mb-1.5">Preferred Treatment</label>
+              <select id="contact-treatment" name="treatment" class="w-full text-sm px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-white text-gray-800">
+                <option value="General Checkup">General Consultation &amp; Dental Checkup</option>
+                <option value="Root Canal Treatment">Root Canal Treatment</option>
+                <option value="Smile Designing">Smile Designing &amp; Veneers</option>
+                <option value="Dental Implants">Dental Implants</option>
+                <option value="Clear Aligners">Clear Aligners / Orthodontics</option>
+                <option value="Pediatric Dentistry">Pediatric Dentistry (Child Care)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 mb-1.5">Message</label>
+              <textarea id="contact-message" name="message" class="w-full text-sm px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-gray-50/50" placeholder="Tell us about your dental concern or preferred appointment timing..." rows="3"></textarea>
+            </div>
+            <div class="form-error-notice hidden p-3 bg-red-50 text-red-700 text-xs rounded-xl border border-red-200 font-medium"></div>
+            <button id="contact-submit-btn" class="w-full bg-primary text-white py-3.5 rounded-full text-sm font-semibold hover:bg-secondary transition-all shadow-sm shadow-primary/30 flex items-center justify-center gap-2 active:scale-95" type="submit">
+              <span class="btn-text">Send Message</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- RIGHT: Google Ratings Showcase Card -->
+      <div class="bg-white rounded-3xl p-6 sm:p-10 border border-gray-200/80 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+        <div>
+          <!-- Google Branding & Large Rating Header -->
+          <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-gray-100 mb-6">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-2xl bg-white border border-gray-200 flex items-center justify-center shadow-sm flex-shrink-0">
+                <svg class="w-6 h-6" viewBox="0 0 24 24">
+                  <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+                  <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+                  <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"></path>
+                  <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"></path>
+                </svg>
+              </div>
+              <div>
+                <span class="text-xs font-semibold uppercase tracking-wider text-gray-500 block">Google Reviews</span>
+                <span class="text-xs text-gray-400">Verified Patient Satisfaction</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-4xl font-black text-gray-900 leading-none">4.8</span>
+              <div>
+                <div class="flex items-center text-yellow-400 text-sm gap-0.5">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                </div>
+                <span class="text-[11px] font-semibold text-gray-500 block">120+ Verified Reviews</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Patient Review Snippets Strip -->
+          <div class="space-y-3.5">
+            <!-- Review 1 -->
+            <div class="p-4 rounded-2xl bg-surface-container-low border border-gray-100/80 transition-all hover:bg-white hover:shadow-sm">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-xs font-bold text-gray-900">Sefin Raj</span>
+                <div class="flex text-yellow-400 text-xs">
+                  <span class="">★★★★★</span>
+                </div>
+              </div>
+              <p class="text-xs text-gray-600 leading-relaxed italic">
+                “The dentist explain the treatments in a friendly manner. I went for my aligner, 3 months before and I'm satisfied with my treatment and still following up through.”
+              </p>
+            </div>
+            <!-- Review 2 -->
+            <div class="p-4 rounded-2xl bg-surface-container-low border border-gray-100/80 transition-all hover:bg-white hover:shadow-sm">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-xs font-bold text-gray-900">Sowmyads Rajan</span>
+                <div class="flex text-yellow-400 text-xs">
+                  <span class="">★★★★★</span>
+                </div>
+              </div>
+              <p class="text-xs text-gray-600 leading-relaxed italic">
+                “Very gentle approach and detailed explanations before every procedure. Highly recommend JC Dental Clinic for compassionate family care.”
+              </p>
+            </div>
+            <!-- Review 3 -->
+            <div class="p-4 rounded-2xl bg-surface-container-low border border-gray-100/80 transition-all hover:bg-white hover:shadow-sm">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-xs font-bold text-gray-900">Saravanan M</span>
+                <div class="flex text-yellow-400 text-xs">
+                  <span class="">★★★★★</span>
+                </div>
+              </div>
+              <p class="text-xs text-gray-600 leading-relaxed italic">
+                “Excellent experience! Dr. Desmen and the team are extremely patient, professional, and thorough. Modern clinic with great hygiene.”
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-6 mt-6 border-t border-gray-100">
+          <a class="w-full py-3 px-4 rounded-full border border-gray-300 text-gray-800 hover:text-primary hover:border-primary text-xs font-semibold flex items-center justify-center gap-2 transition-all hover:bg-gray-50" href="https://maps.google.com/?q=JC+Dental+Clinic+Melakrishnanputhoor+Junction+Nagercoil+629601" rel="noopener noreferrer" target="_blank">
+            <span class="">Read All Reviews on Google</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 2: Address + Map (Desktop two-column, Mobile: Map displays first via flex order) -->
+    <div class="bg-white rounded-3xl p-6 sm:p-10 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow">
+  <!-- Header with Title, Subtitle, and Open Now Badge -->
+  <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-gray-100 mb-8">
+    <div>
+      <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 leading-tight"><ul data-start="248" data-end="381"><li data-section-id="1wtnkni" data-start="356" data-end="381" class=""><strong data-start="358" data-end="381">Find Your Way to Us</strong><span aria-hidden="true" class="PDq2pG_selectionAnchor"></span>
+</li>
+</ul>
+<p data-start="383" data-end="434"></p></h3>
+      
+    </div>
+    <div class="flex items-center gap-3">
+      
+    </div>
+  </div>
+
+  <!-- Two-Column Layout: Left Details + Right Map -->
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+    <!-- Left Details: Address, Contact, Schedule, Directions Button -->
+    <div class="lg:col-span-6 flex flex-col justify-between space-y-6">
+      <div class="space-y-4">
+        <!-- Address -->
+        <div class="flex items-start gap-3.5">
+          <div class="w-9 h-9 rounded-2xl bg-surface-container-low flex items-center justify-center flex-shrink-0 text-primary mt-0.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </div>
+          <div>
+            <span class="text-[11px] uppercase tracking-wider text-gray-400 block font-medium">Address</span>
+            <p class="text-sm font-semibold text-gray-800 leading-snug mt-0.5">JC Dental Clinic, Melakrishnanputhoor Junction, Melakrishnanputhoor, Nagercoil – 629601</p>
+          </div>
+        </div>
+
+        <!-- Direct Phone -->
+        <div class="flex items-start gap-3.5">
+          <div class="w-9 h-9 rounded-2xl bg-surface-container-low flex items-center justify-center flex-shrink-0 text-primary mt-0.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </div>
+          <div>
+            <span class="text-[11px] uppercase tracking-wider text-gray-400 block font-medium">Direct Call</span>
+            <a class="text-sm font-bold text-primary hover:text-secondary underline tracking-wide block mt-0.5" href="tel:9514379569">+91 95143 79569</a>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="flex items-start gap-3.5">
+          <div class="w-9 h-9 rounded-2xl bg-surface-container-low flex items-center justify-center flex-shrink-0 text-primary mt-0.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </div>
+          <div>
+            <span class="text-[11px] uppercase tracking-wider text-gray-400 block font-medium">Email Us</span>
+            <a class="text-sm font-medium text-gray-700 hover:text-primary break-all block mt-0.5" href="mailto:jcdentalclinicmkp@gmail.com">jcdentalclinicmkp@gmail.com</a>
+          </div>
+        </div>
+
+        <!-- Instagram -->
+        <div class="flex items-start gap-3.5">
+          <div class="w-9 h-9 rounded-2xl bg-surface-container-low flex items-center justify-center flex-shrink-0 text-primary mt-0.5">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.79-4 4-4s4 1.79 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+          </div>
+          <div>
+            <span class="text-[11px] uppercase tracking-wider text-gray-400 block font-medium">Instagram</span>
+            <a class="text-sm font-medium text-gray-700 hover:text-primary block mt-0.5" href="https://instagram.com/dentalclinic_jc" rel="noopener noreferrer" target="_blank">@dentalclinic_jc</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Clinic Hours Card -->
+      <div class="bg-surface-container-low p-4 rounded-2xl border border-gray-100 space-y-2">
+        <div class="flex items-center gap-2 mb-1">
+          <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          <span class="text-xs font-bold text-gray-900">Clinic Schedule</span>
+        </div>
+        <div class="flex justify-between text-xs text-gray-600">
+          <span class="font-medium text-gray-800">Mon – Sat:</span>
+          <span class="">9:00 AM – 1:00 PM &amp; 5:00 PM – 9:00 PM</span>
+        </div>
+        <div class="flex justify-between text-xs text-gray-600 pt-1.5 border-t border-gray-200/60">
+          <span class="font-medium text-gray-800">Sunday:</span>
+          <span class="text-primary font-semibold">Appointments Only</span>
+        </div>
+      </div>
+
+      <!-- Get Directions Button -->
+      
+    </div>
+
+    <!-- Right Side: Full Map View -->
+    <div class="lg:col-span-6 flex flex-col">
+      <div class="relative rounded-2xl overflow-hidden border border-gray-200 shadow-inner bg-gray-100 w-full h-[360px] sm:h-[400px] lg:h-full min-h-[360px]">
+        <iframe allowfullscreen="" class="w-full h-full border-0 filter saturate-90 hover:saturate-100 transition-all" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=JC+Dental+Clinic+Melakrishnanputhoor+Junction+Nagercoil+629601&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed" title="JC Dental Clinic Location Map"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+<!-- END: Contact & Visit Us Section -->
+<!-- BEGIN: Bottom Footer -->
+
+<!-- END: Bottom Footer --></main><footer class="bg-[#082c38] text-white pt-14 pb-10 border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- 3-Part Main Footer Row -->
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8 pb-10">
+      <!-- Left: Logo & Title -->
+      <div class="flex items-center gap-3.5">
+        <img alt="JC Dental Clinic Logo" class="h-12 w-auto object-contain rounded-lg bg-white/10 p-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvDpAaybwVQv7nQ9DUKKB97bG04ZMMAqLAkoP0CQY07xo9WYHKqGXLeQRyIBvpX_7vc_EgT1Ff3ypO5eiSPvxn3jCuChmSD8ZCEpZrbqFxO1VLgusNN4AaFEFRMm1SQ4yvoiDSpHJYyqPs9sWCKnqnlDD8cOgHWrng71vvtAMmDqRGYRonmtsRde7aqTWWebKkgTuBuaG1IGG-PDsofBMfwnaQuU2AvxoXvWeemFbEDyKNDNFk606rUTDZv0mk_9U_Xw">
+        <div>
+          <span class="font-bold text-xl tracking-tight text-white block leading-tight">JC Dental Clinic</span>
+          <span class="text-xs text-white/60 block font-light">Melakrishnanputhoor, Nagercoil</span>
+        </div>
+      </div>
+
+      <!-- Center: Quick Links -->
+      <div class="flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-white/80">
+        <a class="hover:text-white transition-colors" href="#services">Treatments</a>
+        <a class="hover:text-white transition-colors" href="#stories">Stories of Smile</a>
+        <a class="hover:text-white transition-colors" href="#experts">Our Experts</a>
+        <a class="hover:text-white transition-colors" href="#contact">Book Appointment</a>
+      </div>
+
+      <!-- Right: Social & Contact Icons -->
+      <div class="flex items-center gap-3">
+        <!-- Instagram -->
+        <a aria-label="Instagram" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all hover:scale-105" href="https://instagram.com/dentalclinic_jc" rel="noopener noreferrer" target="_blank">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.79-4 4-4s4 1.79 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+        </a>
+        <!-- Phone -->
+        <a aria-label="Call Clinic" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all hover:scale-105" href="tel:9514379569">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </a>
+        <!-- Location -->
+        <a aria-label="Google Maps Location" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all hover:scale-105" href="https://maps.google.com/?q=JC+Dental+Clinic+Melakrishnanputhoor+Junction+Nagercoil+629601" rel="noopener noreferrer" target="_blank">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Thin Divider -->
+    <div class="border-t border-white/10 pt-6">
+      <!-- Bottom line centered with muted small text -->
+      <p class="text-center text-xs text-white/50 font-light tracking-wide">
+        © 2026 JC Dental Clinic. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+<!-- VIDEO MODAL (Completely hidden & non-blocking by default) -->
+<div aria-labelledby="modal-video-title" aria-modal="true" class="fixed inset-0 z-50 items-center justify-center bg-black/80 backdrop-blur-sm p-4 sm:p-6 transition-opacity duration-300 hidden" id="video-modal" role="dialog">
+<div class="relative w-full max-w-3xl bg-gray-900 rounded-3xl overflow-hidden shadow-2xl border border-white/10 flex flex-col transform transition-all">
+<!-- Modal Header -->
+<div class="flex items-center justify-between px-6 py-4 bg-gray-900/90 border-b border-gray-800">
+<div class="flex items-center gap-3">
+<span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></span>
+<h3 class="text-white font-medium text-sm sm:text-base" id="modal-video-title">Meera's Patient Journey — Full Mouth Rehabilitation</h3>
+</div>
+<button aria-label="Close modal" class="text-gray-400 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors focus:outline-none" id="close-video-modal">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+<!-- Video Player Simulation Container -->
+<div class="relative aspect-video w-full bg-black flex items-center justify-center group overflow-hidden">
+<img alt="Meera video thumbnail" class="absolute inset-0 w-full h-full object-cover opacity-80" src="https://lh3.googleusercontent.com/aida/AEtjO1W0Ke_c_8u4ExxmhQ5MAl51Ug7It1VucAVHKBQ_JEKtdZ9nigjSmVcaCOpFR4-Il1dekxy-Nr-r5t6rgMdhxMPCwPyWq99Qg0XU54yI8Zp0nD6J5mbdGnLFPPjYX5jZxrEiEVjwtt-nOgYg7N1m7iB2gd3d9-bbVNMdWzjh6wYKVRtpdLp1JAR0ZyQq2o5KJd2hnCKtfKLg1GWOMX80N49xTDZOfHwBoKgIzZkenGknDIgVMaTINRDXIMI">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30"></div>
+<!-- Video Play/Pause action overlay -->
+<button class="relative z-10 w-20 h-20 rounded-full bg-primary/90 text-white flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all ring-8 ring-white/20" id="modal-play-action-btn">
+<svg class="w-8 h-8 ml-1 fill-current" id="modal-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+<svg class="w-8 h-8 fill-current hidden" id="modal-pause-icon" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path></svg>
+</button>
+<!-- Video Controls Bar -->
+<div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black via-black/80 to-transparent flex flex-col gap-2">
+<div class="w-full bg-white/30 h-1.5 rounded-full overflow-hidden cursor-pointer">
+<div class="bg-primary h-full w-1/3 rounded-full transition-all" id="video-progress"></div>
+</div>
+<div class="flex items-center justify-between text-xs text-gray-300">
+<span id="video-time-display" class="">0:24 / 1:15</span>
+<span class="text-white font-medium">1080p HD • Dr. JC Dental Testimonials</span>
+</div>
+</div>
+</div>
+<!-- Modal Footnote -->
+<div class="px-6 py-3 bg-gray-950 text-xs text-gray-400 flex items-center justify-between">
+<span class="">Patient treated at JC Dental Clinic</span>
+<button class="text-xs text-primary-fixed hover:text-white font-semibold flex items-center gap-1" id="modal-book-cta">Book Consultation →</button>
+</div>
+</div>
+</div>
+<style data-purpose="scrollbar-hiding">
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<script>
+  // Services Carousel Scroll Functionality
+  (function() {
+    const carousel = document.getElementById('services-carousel');
+    const prevBtn = document.getElementById('services-prev-btn');
+    const nextBtn = document.getElementById('services-next-btn');
+
+    if (carousel && prevBtn && nextBtn) {
+      const getScrollAmount = () => {
+        const firstCard = carousel.querySelector('.snap-start');
+        if (firstCard) {
+          const cardWidth = firstCard.offsetWidth;
+          const gap = 24;
+          return (cardWidth + gap) * 2;
+        }
+        return 700;
+      };
+
+      prevBtn.addEventListener('click', () => {
+        carousel.scrollBy({
+          left: -getScrollAmount(),
+          behavior: 'smooth'
+        });
+      });
+
+      nextBtn.addEventListener('click', () => {
+        carousel.scrollBy({
+          left: getScrollAmount(),
+          behavior: 'smooth'
+        });
+      });
+    }
+  })();
+
+  // Stories of Smile Interactive Features
+  (function() {
+    // 1. Stories Data Store
+    const storiesData = [
+      {
+        id: 0,
+        name: "Priya, 28",
+        treatment: "Full Smile Designing & Porcelain Veneers",
+        duration: "3 Visits • 2 Weeks",
+        quote: "“I used to cover my mouth whenever I laughed in photos. Now I can't stop smiling with complete confidence.”",
+        beforeImg: "https://lh3.googleusercontent.com/aida-public/AB6AXuDaNEaYyhRPsouDM8EmDI0gmSmeLtnNhxSAF07fFo1pTUr7HLTc4vQJH3w5ZWrkFeEfv58LYkcsJNeDmriRJy5R-2zXmR6OWvmPivXlhT9bqVGPvV8fecVLnV4a4DcniB07_RX1UYxmiiBEyUOXlI0S1ICuqI6ELghzQTeyIMcRlYcOUj2rfv0PTF241FgHIBa8iMwgD83fPo5ez7KExelGTKhXZ6Uwh9nSxWC7IfzrFBzkbsqPXXqH",
+        afterImg: "https://lh3.googleusercontent.com/aida-public/AB6AXuDaNEaYyhRPsouDM8EmDI0gmSmeLtnNhxSAF07fFo1pTUr7HLTc4vQJH3w5ZWrkFeEfv58LYkcsJNeDmriRJy5R-2zXmR6OWvmPivXlhT9bqVGPvV8fecVLnV4a4DcniB07_RX1UYxmiiBEyUOXlI0S1ICuqI6ELghzQTeyIMcRlYcOUj2rfv0PTF241FgHIBa8iMwgD83fPo5ez7KExelGTKhXZ6Uwh9nSxWC7IfzrFBzkbsqPXXqH",
+        badge: "Verified Patient",
+        rating: "5.0"
+      },
+      {
+        id: 1,
+        name: "Kavitha, 24",
+        treatment: "Digital Clear Aligners & Whitening",
+        duration: "7 Months • 14 Trays",
+        quote: "“Completed in 7 months without anyone noticing I was wearing aligners! My crowding was completely fixed.”",
+        beforeImg: "https://lh3.googleusercontent.com/aida/AEtjO1XNUdyMq1-cRPhJsT3hi5d6TPXQ61ypaLSXLH_cnujvFOAx0yz04kWGct-mxFTlI8VH8JIMYygzGIjIhnJOOfabW_sEGlbSWERaTr_KhBC0_wVtex_6XyljscyjGLWsxwR218sZVnkcm6Nq0dUoSz5edGDtmmRT5qhWOmO65XL3xxTX91L4t1JnJtRfFWposJpJxmdS6dyQZ9inbd7SdlriyrsH8VboWdcgndUEGjwE4s7VtGGWps4r1Q",
+        afterImg: "https://lh3.googleusercontent.com/aida-public/AB6AXuB_iDatQsQJQjL1S0KwRBMGo7rPrk1EIMdCChkEkXr2JY8v5KfcbgExN4CtUskUFOh5uONdyv2ivMw1rbjWymhfKB-BZdDuNVyfHH_iD7CF31VGOdrPw1Hcl7f8YRH_P3ClX5iqlQew46_s3ryLbWhxqSWC1dsKqXrxUGB6GksUHPehJ0fuf2A0AJvS85AIR5EGrcE4BXH_wA26g9LbJx_uiGpA5A0xdKILPd90SSWPuQtgSzTHSBG3",
+        badge: "Verified Patient",
+        rating: "5.0"
+      },
+      {
+        id: 2,
+        name: "Rajesh K., 42",
+        treatment: "Precision Implant & Zirconia Crown",
+        duration: "3 Visits • Guided Surgery",
+        quote: "“Chewing feels completely natural again. Painless 3D computer-guided procedure and stellar staff.”",
+        beforeImg: "https://lh3.googleusercontent.com/aida/AEtjO1WVhR7_Sl4MaNmBCE0qVJsZqA-SX-1GS-s9WlFznl3lH2IKgHDSLnAZ9KwZXeAAzapz5JWOIWbE1A5Q-nazHNJhii429-zKmSkr4rSwgC81A6EAw2BzlquC9p-wzKI-hvpa4PPFyRfWTDYAFa4tnot3XLj5dtAeZlyijyjRsAOLhvIv7N4hXMQ0O2asG_BWxf_r917O5Yj8H8HGJtsIo26joRH1aAKcMzApiQAywhAZhbISXKdcnrVUtBM",
+        afterImg: "https://lh3.googleusercontent.com/aida-public/AB6AXuAQ7lJTttIcuTa4nnTZKRG4XpqCA9n4pjRcXZ2JO5fM7J0wcPyPREccHi3VlIa251wbu6f5eR8SPbqZolhUIQnM_xpZMqfQlFkDleonEElDlpSD9W9Jh6FdHsnMhfIxXvAwR3c06bYJTG_zCeaZLX_lKw8htMrTsHafh6SlxQKvAfKBOptb-2S5psqnOWTi_S94SBRUs6fMviiJ3XqgKJ26q6mOy3ZhgnthTiuNLS2b1F7Z3Mx_ehx3",
+        badge: "Verified Patient",
+        rating: "5.0"
+      }
+    ];
+
+    let currentStoryIdx = 0;
+    let autoRotateTimer = null;
+
+    // Elements
+    const featuredName = document.getElementById('featured-name');
+    const featuredTreatment = document.getElementById('featured-treatment');
+    const featuredDuration = document.getElementById('featured-duration');
+    const featuredQuote = document.getElementById('featured-quote');
+    const featuredCounter = document.getElementById('featured-counter');
+    const storyDots = document.querySelectorAll('.story-dot');
+    const baBeforeImg = document.getElementById('ba-before-img');
+    const baAfterImg = document.getElementById('ba-after-img');
+    const baRange = document.getElementById('ba-range-slider');
+    const baWrapper = document.getElementById('ba-before-wrapper');
+    const baHandleLine = document.getElementById('ba-handle-line');
+
+    // 2. Interactive Before & After Slider Logic
+    function updateSlider(val) {
+      if (!baWrapper || !baHandleLine || !baBeforeImg) return;
+      const percent = Math.max(0, Math.min(100, val));
+      baWrapper.style.width = `${percent}%`;
+      baHandleLine.style.left = `${percent}%`;
+      // Keep before image scale aligned
+      baBeforeImg.style.width = `${100 / (percent / 100)}%`;
+      baBeforeImg.style.maxWidth = 'none';
+    }
+
+    if (baRange) {
+      baRange.addEventListener('input', (e) => {
+        updateSlider(e.target.value);
+      });
+      // Initial reset to 50%
+      updateSlider(50);
+    }
+
+    // 3. Switch Featured Story
+    function switchStory(index) {
+      if (index < 0 || index >= storiesData.length) return;
+      currentStoryIdx = index;
+      const data = storiesData[index];
+
+      // Update text with soft fade
+      if (featuredName) featuredName.textContent = data.name;
+      if (featuredTreatment) featuredTreatment.textContent = data.treatment;
+      if (featuredDuration) featuredDuration.textContent = data.duration;
+      if (featuredQuote) featuredQuote.textContent = data.quote;
+      if (featuredCounter) featuredCounter.textContent = `Featured Story ${index + 1} of ${storiesData.length}`;
+
+      // Update images
+      if (baBeforeImg) baBeforeImg.src = data.beforeImg;
+      if (baAfterImg) baAfterImg.src = data.afterImg;
+
+      // Reset slider to center
+      if (baRange) baRange.value = 50;
+      updateSlider(50);
+
+      // Update dots
+      storyDots.forEach((dot, idx) => {
+        if (idx === index) {
+          dot.className = 'story-dot h-2 rounded-full bg-primary w-7 transition-all';
+        } else {
+          dot.className = 'story-dot h-2 rounded-full bg-gray-200 hover:bg-gray-300 w-2 transition-all';
+        }
+      });
+    }
+
+    // Dot click triggers
+    storyDots.forEach((dot, idx) => {
+      dot.addEventListener('click', () => {
+        switchStory(idx);
+        restartTimer();
+      });
+    });
+
+    // Story Cards Click Handlers
+    document.querySelectorAll('.story-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const idx = parseInt(card.getAttribute('data-story-index'), 10);
+        if (!isNaN(idx)) {
+          switchStory(idx);
+          restartTimer();
+          // Scroll smoothly to spotlight card
+          const spotlight = document.getElementById('featured-story-card');
+          if (spotlight) {
+            spotlight.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }
+      });
+    });
+
+    // Auto rotate every 8 seconds
+    function startTimer() {
+      autoRotateTimer = setInterval(() => {
+        const next = (currentStoryIdx + 1) % storiesData.length;
+        switchStory(next);
+      }, 8000);
+    }
+
+    function restartTimer() {
+      if (autoRotateTimer) clearInterval(autoRotateTimer);
+      startTimer();
+    }
+
+    startTimer();
+
+    // 4. Video Modal System (Clean, completely hidden by default, accessible)
+    const modal = document.getElementById('video-modal');
+    const openVideoTrigger = document.getElementById('video-card-trigger');
+    const closeModalBtn = document.getElementById('close-video-modal');
+    const playActionBtn = document.getElementById('modal-play-action-btn');
+    const playIcon = document.getElementById('modal-play-icon');
+    const pauseIcon = document.getElementById('modal-pause-icon');
+    const videoProgress = document.getElementById('video-progress');
+    const videoTimeDisplay = document.getElementById('video-time-display');
+
+    let isPlaying = false;
+    let progressInterval = null;
+    let progressVal = 30;
+
+    function openModal() {
+      if (!modal) return;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden'; // prevent scroll
+    }
+
+    function closeModal() {
+      if (!modal) return;
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+      pauseSimulatedVideo();
+    }
+
+    function togglePlay() {
+      if (isPlaying) {
+        pauseSimulatedVideo();
+      } else {
+        playSimulatedVideo();
+      }
+    }
+
+    function playSimulatedVideo() {
+      isPlaying = true;
+      if (playIcon) playIcon.classList.add('hidden');
+      if (pauseIcon) pauseIcon.classList.remove('hidden');
+      progressInterval = setInterval(() => {
+        progressVal = (progressVal + 1) % 100;
+        if (videoProgress) videoProgress.style.width = `${progressVal}%`;
+        const secs = Math.floor((progressVal / 100) * 75);
+        const mins = Math.floor(secs / 60);
+        const remSecs = secs % 60;
+        if (videoTimeDisplay) {
+          videoTimeDisplay.textContent = `${mins}:${remSecs < 10 ? '0' : ''}${remSecs} / 1:15`;
+        }
+      }, 500);
+    }
+
+    function pauseSimulatedVideo() {
+      isPlaying = false;
+      if (playIcon) playIcon.classList.remove('hidden');
+      if (pauseIcon) pauseIcon.classList.add('hidden');
+      if (progressInterval) clearInterval(progressInterval);
+    }
+
+    if (openVideoTrigger) {
+      openVideoTrigger.addEventListener('click', openModal);
+    }
+
+    if (closeModalBtn) {
+      closeModalBtn.addEventListener('click', closeModal);
+    }
+
+    if (modal) {
+      // Backdrop click closes
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+    }
+
+    if (playActionBtn) {
+      playActionBtn.addEventListener('click', togglePlay);
+    }
+
+    // Escape key closes modal
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+
+    const modalBookCta = document.getElementById('modal-book-cta');
+    if (modalBookCta) {
+      modalBookCta.addEventListener('click', () => {
+        closeModal();
+        const contactSection = document.getElementById('contact') || document.getElementById('services');
+        if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+  })();
+</script>
+<script>
+  // Doctor Bio Accordion Expansion
+  (function() {
+    const toggles = document.querySelectorAll('.doctor-bio-toggle');
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const card = toggle.closest('.group');
+        if (!card) return;
+        const bioContent = card.querySelector('.doctor-bio-content');
+        const toggleText = toggle.querySelector('.toggle-text');
+        const arrow = toggle.querySelector('.toggle-arrow');
+        
+        if (bioContent) {
+          const isHidden = bioContent.classList.contains('hidden');
+          if (isHidden) {
+            bioContent.classList.remove('hidden');
+            if (toggleText) toggleText.textContent = 'Hide Details';
+            if (arrow) arrow.classList.add('rotate-180');
+          } else {
+            bioContent.classList.add('hidden');
+            if (toggleText) toggleText.textContent = 'Read Full Bio / Credentials';
+            if (arrow) arrow.classList.remove('rotate-180');
+          }
+        }
+      });
+    });
+  })();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- BEGIN: Quick-Booking Consultation Overlay Modal -->
+<div id="booking-modal" class="fixed inset-0 z-50 items-center justify-center bg-black/75 backdrop-blur-sm p-4 sm:p-6 transition-opacity duration-300 hidden" role="dialog" aria-modal="true" aria-labelledby="modal-booking-heading">
+  <div class="relative w-full max-w-lg bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-100 flex flex-col transform transition-all">
+    <!-- Header -->
+    <div class="flex items-center justify-between px-6 py-5 bg-gradient-to-r from-surface-container-low to-white border-b border-gray-100">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-2xl bg-primary text-white flex items-center justify-center font-bold text-sm shadow-sm">
+          JC
+        </div>
+        <div>
+          <h3 id="modal-booking-heading" class="text-lg font-bold text-gray-900 leading-tight">Book General Consultation</h3>
+          <p class="text-xs text-gray-500 font-light">Takes less than a minute — we'll confirm by call or WhatsApp.</p>
+        </div>
+      </div>
+      <button id="close-booking-modal-btn" onclick="closeBookingModal()" class="text-gray-400 hover:text-gray-700 p-2 rounded-full hover:bg-gray-100 transition-colors focus:outline-none" aria-label="Close booking dialog">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+      </button>
+    </div>
+
+    <!-- Body Form -->
+    <form id="modal-booking-form" class="p-6 space-y-4" onsubmit="handleFormSubmission(event, 'Booking Modal Form')">
+      <!-- Patient Name & Phone -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div>
+          <label class="block text-xs font-semibold text-gray-700 mb-1">Full Name *</label>
+          <input id="modal-name" name="name" type="text" required="" placeholder="e.g. Anand Kumar" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-gray-50/50 text-gray-800">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-gray-700 mb-1">WhatsApp / Phone Number *</label>
+          <input id="modal-phone" name="phone" type="tel" required="" placeholder="+91 98765 43210" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-gray-50/50 text-gray-800">
+        </div>
+      </div>
+
+      <!-- Treatment Dropdown Selector -->
+      <div>
+        <label class="block text-xs font-semibold text-gray-700 mb-1">Preferred Treatment *</label>
+        <select id="modal-treatment-select" name="treatment" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-white text-gray-800">
+          <option value="General Consultation">General Consultation</option>
+          <option value="Root Canal Treatment">Root Canal Treatment</option>
+          <option value="Smile Designing &amp; Veneers">Smile Designing &amp; Veneers</option>
+          <option value="Dental Implants">Dental Implants</option>
+          <option value="Clear Aligners">Clear Aligners</option>
+          <option value="Teeth Whitening">Teeth Whitening</option>
+          <option value="Pediatric Dentistry">Pediatric Dentistry</option>
+          <option value="Crowns &amp; Bridges">Crowns &amp; Bridges</option>
+          <option value="Cleaning &amp; Scaling">Cleaning &amp; Scaling</option>
+        </select>
+      </div>
+
+      <!-- Preferred Date & Time Slot -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div>
+          <label class="block text-xs font-semibold text-gray-700 mb-1">Preferred Date</label>
+          <input id="modal-date" name="date" type="date" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-gray-50/50 text-gray-800">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-gray-700 mb-1">Preferred Time Slot</label>
+          <select id="modal-slot" name="slot" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-white text-gray-800">
+            <option value="Morning 9:00 AM - 1:00 PM">Morning (9:00 AM – 1:00 PM)</option>
+            <option value="Evening 5:00 PM - 9:00 PM">Evening (5:00 PM – 9:00 PM)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Additional Note -->
+      <div>
+        <label class="block text-xs font-semibold text-gray-700 mb-1">Dental Concern / Notes (Optional)</label>
+        <input id="modal-notes" name="notes" type="text" placeholder="Brief description of your dental concern or preferred doctor..." class="w-full text-xs px-3.5 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-gray-50/50 text-gray-800">
+      </div>
+
+      <div class="form-error-notice hidden p-3 bg-red-50 text-red-700 text-xs rounded-xl border border-red-200 font-medium"></div>
+
+      <!-- Primary Action Buttons -->
+      <div class="pt-2 flex flex-col sm:flex-row gap-2.5">
+        <button id="modal-submit-btn" type="submit" class="flex-1 bg-primary text-white py-3 rounded-full text-xs font-semibold hover:bg-secondary transition-all shadow-sm shadow-primary/30 flex items-center justify-center gap-1.5 active:scale-95">
+          <span class="btn-text">Request Appointment</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- BEGIN: Success Confirmation Dialog Overlay Modal -->
+<div id="success-dialog-modal" class="fixed inset-0 z-50 items-center justify-center bg-black/75 backdrop-blur-sm p-4 sm:p-6 transition-all duration-300 hidden" role="dialog" aria-modal="true" aria-labelledby="success-dialog-heading">
+  <div class="relative w-full max-w-md bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-100 p-6 sm:p-8 flex flex-col items-center text-center transform transition-all">
+    <!-- Close Icon Button -->
+    <button onclick="closeSuccessDialog()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 p-2 rounded-full hover:bg-gray-100 transition-colors focus:outline-none" aria-label="Close dialog">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+    </button>
+
+    <!-- Success Icon -->
+    <div class="w-16 h-16 rounded-2xl bg-emerald-50 border border-emerald-100 text-emerald-600 flex items-center justify-center mb-5 shadow-sm">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+      </svg>
+    </div>
+
+    <!-- Title -->
+    <h3 id="success-dialog-heading" class="text-xl font-bold text-gray-900 mb-3">Consultation Received</h3>
+
+    <!-- Exact Success Message Text -->
+    <div class="text-sm text-gray-600 leading-relaxed space-y-3 mb-6">
+      <p class="font-medium text-gray-800">
+        Thank you for contacting JC Dental Clinic.<br>We’ve received your consultation request successfully.
+      </p>
+      <p>
+        Our team will contact you shortly to confirm your appointment.
+      </p>
+      <p class="text-xs text-gray-500 pt-1">
+        If you need immediate assistance, please call us directly.
+      </p>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="flex flex-col sm:flex-row gap-2.5 w-full">
+      <a href="tel:9514379569" class="flex-1 bg-primary text-white py-3 px-4 rounded-full text-xs font-semibold hover:bg-secondary transition-all shadow-sm shadow-primary/30 flex items-center justify-center gap-2 active:scale-95">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        Call Us Directly
+      </a>
+      <button onclick="closeSuccessDialog()" type="button" class="px-6 py-3 bg-gray-100 text-gray-700 hover:bg-gray-200 rounded-full text-xs font-semibold transition-all active:scale-95">
+        Close
+      </button>
+    </div>
+  </div>
+</div><script id="mobile-nav-script">
+  (function() {
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const navMenu = document.getElementById('mobile-nav-menu');
+    const burgerIcon = document.getElementById('mobile-hamburger-icon');
+    const closeIcon = document.getElementById('mobile-close-icon');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+    const mobileBookBtn = document.getElementById('mobile-menu-book-btn');
+
+    function closeMenu() {
+      if (!navMenu) return;
+      navMenu.classList.add('hidden');
+      navMenu.classList.remove('flex');
+      if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
+      if (burgerIcon) burgerIcon.classList.remove('hidden');
+      if (closeIcon) closeIcon.classList.add('hidden');
+    }
+
+    function toggleMenu() {
+      if (!navMenu) return;
+      const isClosed = navMenu.classList.contains('hidden');
+      if (isClosed) {
+        navMenu.classList.remove('hidden');
+        navMenu.classList.add('flex');
+        if (menuBtn) menuBtn.setAttribute('aria-expanded', 'true');
+        if (burgerIcon) burgerIcon.classList.add('hidden');
+        if (closeIcon) closeIcon.classList.remove('hidden');
+      } else {
+        closeMenu();
+      }
+    }
+
+    if (menuBtn) {
+      menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenu();
+      });
+    }
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const targetId = link.getAttribute('href')?.replace('#', '');
+        if (targetId) {
+          e.preventDefault();
+          closeMenu();
+          const targetEl = document.getElementById(targetId);
+          if (targetEl) {
+            targetEl.scrollIntoView({ behavior: 'smooth' });
+            history.pushState(null, null, '#' + targetId);
+          }
+        }
+      });
+    });
+
+    if (mobileBookBtn) {
+      mobileBookBtn.addEventListener('click', () => {
+        closeMenu();
+        if (typeof openBookingModal === 'function') {
+          openBookingModal('General Consultation');
+        }
+      });
+    }
+
+    // Close mobile menu on outside click or scroll
+    document.addEventListener('click', (e) => {
+      if (navMenu && !navMenu.contains(e.target) && menuBtn && !menuBtn.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        closeMenu();
+      }
+    });
+  })();
+</script>
+
+<script>
+  // Updated Discord Webhook URL & Success Dialog Handlers
+  const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1547625706505240666/_vhqcQMcIA0m3YRbmifAfLzXyRJwqO9-Hcj4Gbo3lYRQupM7jG1mlj1NGZxLnDUYpPUx';
+
+  function validatePhoneNumber(phone) {
+    // Strip all non-digit characters
+    const digitsOnly = phone.replace(/\D/g, '');
+    // Ensure at least 10 digits and at most 15 digits
+    return digitsOnly.length >= 10 && digitsOnly.length <= 15;
+  }
+
+  function validateFormInputs(form) {
+    let isValid = true;
+    let firstInvalidInput = null;
+
+    // Reset error displays inside form
+    const errorNotice = form.querySelector('.form-error-notice');
+    if (errorNotice) {
+      errorNotice.classList.add('hidden');
+      errorNotice.innerHTML = '';
+    }
+
+    const inputs = form.querySelectorAll('input, select, textarea');
+    inputs.forEach(input => {
+      input.classList.remove('border-red-500', 'bg-red-50/40', 'focus:border-red-500', 'focus:ring-red-500');
+    });
+
+    // 1. Name validation
+    const nameInput = form.querySelector('#contact-name') || form.querySelector('#modal-name') || form.querySelector('input[name="name"]');
+    const nameVal = nameInput ? nameInput.value.trim() : '';
+
+    if (nameInput && (!nameVal || nameVal.length < 2)) {
+      isValid = false;
+      nameInput.classList.add('border-red-500', 'bg-red-50/40', 'focus:border-red-500', 'focus:ring-red-500');
+      if (!firstInvalidInput) firstInvalidInput = nameInput;
+    }
+
+    // 2. Phone validation
+    const phoneInput = form.querySelector('#contact-phone') || form.querySelector('#modal-phone') || form.querySelector('input[type="tel"]');
+    const phoneVal = phoneInput ? phoneInput.value.trim() : '';
+
+    if (phoneInput && (!phoneVal || !validatePhoneNumber(phoneVal))) {
+      isValid = false;
+      phoneInput.classList.add('border-red-500', 'bg-red-50/40', 'focus:border-red-500', 'focus:ring-red-500');
+      if (!firstInvalidInput) firstInvalidInput = phoneInput;
+    }
+
+    // Show inline error notice if invalid
+    if (!isValid) {
+      let errorMessage = '';
+      if (nameInput && (!nameVal || nameVal.length < 2) && phoneInput && (!phoneVal || !validatePhoneNumber(phoneVal))) {
+        errorMessage = '⚠️ Please enter your full name and a valid 10-digit phone number.';
+      } else if (nameInput && (!nameVal || nameVal.length < 2)) {
+        errorMessage = '⚠️ Please enter your full name (minimum 2 characters).';
+      } else if (phoneInput && (!phoneVal || !validatePhoneNumber(phoneVal))) {
+        errorMessage = '⚠️ Please enter a valid 10-digit phone number.';
+      }
+
+      if (errorNotice) {
+        errorNotice.innerHTML = errorMessage;
+        errorNotice.classList.remove('hidden');
+      }
+
+      if (firstInvalidInput) {
+        firstInvalidInput.focus();
+      }
+    }
+
+    return isValid;
+  }
+
+  function showSuccessDialog() {
+    const dialog = document.getElementById('success-dialog-modal');
+    if (dialog) {
+      dialog.classList.remove('hidden');
+      dialog.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeSuccessDialog() {
+    const dialog = document.getElementById('success-dialog-modal');
+    if (dialog) {
+      dialog.classList.add('hidden');
+      dialog.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+  }
+
+  async function handleFormSubmission(event, formType) {
+    event.preventDefault();
+    const form = event.target;
+
+    // Validate inputs first
+    if (!validateFormInputs(form)) {
+      return;
+    }
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const btnTextEl = submitBtn ? submitBtn.querySelector('.btn-text') : null;
+    const originalText = btnTextEl ? btnTextEl.textContent : (submitBtn ? submitBtn.textContent : '');
+
+    // Set loading state
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      if (btnTextEl) btnTextEl.textContent = 'Submitting...';
+    }
+
+    // Extract form fields
+    let name = '', phone = '', treatment = '', date = '', slot = '', message = '';
+
+    if (form.id === 'contact-appointment-form') {
+      name = form.querySelector('#contact-name')?.value?.trim() || '';
+      phone = form.querySelector('#contact-phone')?.value?.trim() || '';
+      treatment = form.querySelector('#contact-treatment')?.value || 'General Consultation';
+      message = form.querySelector('#contact-message')?.value?.trim() || '';
+    } else {
+      name = form.querySelector('#modal-name')?.value?.trim() || '';
+      phone = form.querySelector('#modal-phone')?.value?.trim() || '';
+      treatment = form.querySelector('#modal-treatment-select')?.value || 'General Consultation';
+      date = form.querySelector('#modal-date')?.value || '';
+      slot = form.querySelector('#modal-slot')?.value || '';
+      message = form.querySelector('#modal-notes')?.value?.trim() || '';
+    }
+
+    // Format fields for Discord Embed
+    const fields = [
+      { name: "👤 Patient Name", value: name, inline: true },
+      { name: "📞 Phone / WhatsApp", value: phone, inline: true },
+      { name: "🩺 Preferred Treatment", value: treatment || "General Consultation", inline: true }
+    ];
+
+    if (date) {
+      fields.push({ name: "📅 Preferred Date", value: date, inline: true });
+    }
+    if (slot) {
+      fields.push({ name: "⏰ Time Slot", value: slot, inline: true });
+    }
+    fields.push({ name: "📝 Message / Notes", value: message || "No additional notes provided.", inline: false });
+
+    // Discord Embed Payload
+    const payload = {
+      username: "JC Dental Consultation Bot",
+      avatar_url: "https://lh3.googleusercontent.com/aida-public/AB6AXuA64c5oq0A2dtq-2F2NCWRzJsV113WhQmVfzbhFIIfcJYrpJIZJMEJOu6XhZIL6YUiD4OSShUW8IDPbiYVH4MOspVGsfzEPAsGdrGxQeKYLCzV0EOHULGK--Gd-aFuRTu8ZGq6QfuPW_DX2z4-gItL_Bzkp_nvBFx3vTDkhH-njt0VpftVdF6E9qoVJvzKLfKcaJ3Uz8RQZqPKbn9j8tOt55_sCXzZz_f4UuI787msgpkCpx-kJLw7dtuZBEOYGE6m16Q",
+      embeds: [
+        {
+          title: `🦷 New Consultation Request (${formType})`,
+          color: 0x004357, // Primary clinic theme color
+          fields: fields,
+          footer: { text: "JC Dental Clinic • Melakrishnanputhoor Junction" },
+          timestamp: new Date().toISOString()
+        }
+      ]
+    };
+
+    try {
+      await fetch(DISCORD_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+    } catch (err) {
+      console.error('Error sending request to Discord webhook:', err);
+    } finally {
+      // Restore button text & enable button
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        if (btnTextEl) btnTextEl.textContent = originalText;
+      }
+      // Close booking overlay modal if open
+      closeBookingModal();
+      // Reset form input values
+      form.reset();
+      // Hide any error notice
+      const errorNotice = form.querySelector('.form-error-notice');
+      if (errorNotice) errorNotice.classList.add('hidden');
+      // Display the custom success dialog modal
+      showSuccessDialog();
+    }
+  }
+
+  // Global Booking Modal Handlers
+  function openBookingModal(defaultConcern) {
+    const modal = document.getElementById('booking-modal');
+    const treatmentInput = document.getElementById('modal-treatment-select');
+    const heading = document.getElementById('modal-booking-heading');
+    
+    if (defaultConcern && heading) {
+      heading.textContent = `Book ${defaultConcern}`;
+    }
+    if (defaultConcern && treatmentInput) {
+      const matchingOpt = Array.from(treatmentInput.options).find(opt => opt.value.toLowerCase().includes(defaultConcern.toLowerCase()) || defaultConcern.toLowerCase().includes(opt.value.toLowerCase()));
+      if (matchingOpt) {
+        treatmentInput.value = matchingOpt.value;
+      }
+    }
+    if (modal) {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeBookingModal() {
+    const modal = document.getElementById('booking-modal');
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+  }
+
+  // Live input error removal
+  document.addEventListener('input', function(e) {
+    if (e.target.matches('#contact-name, #contact-phone, #modal-name, #modal-phone')) {
+      e.target.classList.remove('border-red-500', 'bg-red-50/40', 'focus:border-red-500', 'focus:ring-red-500');
+      const form = e.target.closest('form');
+      if (form) {
+        const errorNotice = form.querySelector('.form-error-notice');
+        if (errorNotice) errorNotice.classList.add('hidden');
+      }
+    }
+  });
+
+  // Close modals when clicking on backdrops
+  document.getElementById('booking-modal')?.addEventListener('click', function(e) {
+    if (e.target === this) closeBookingModal();
+  });
+
+  document.getElementById('success-dialog-modal')?.addEventListener('click', function(e) {
+    if (e.target === this) closeSuccessDialog();
+  });
+
+  // Close modals on Escape key press
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeBookingModal();
+      closeSuccessDialog();
+    }
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>JC Dental Clinic | Clinical Clarity in Every Smile</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#bfc8cd",
+                        "secondary-fixed": "#88f5e2",
+                        "on-primary-container": "#93d3ef",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#40484c",
+                        "tertiary-fixed": "#dbe4e5",
+                        "inverse-surface": "#273141",
+                        "on-surface": "#121c2c",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#006f63",
+                        "primary": "#004357",
+                        "inverse-on-surface": "#ebf1ff",
+                        "primary-fixed": "#bde9ff",
+                        "background": "#f9f9ff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#001f2a",
+                        "on-primary-fixed-variant": "#004d64",
+                        "surface-tint": "#1e667f",
+                        "inverse-primary": "#90cfec",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#d0daf0",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#70787d",
+                        "on-error": "#ffffff",
+                        "surface-container": "#e7eeff",
+                        "surface-container-high": "#dee8ff",
+                        "tertiary-container": "#4d5657",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#d9e3f9",
+                        "surface-container-highest": "#d9e3f9",
+                        "surface": "#f9f9ff",
+                        "tertiary-fixed-dim": "#bfc8c9",
+                        "on-tertiary-fixed": "#151d1e",
+                        "on-secondary-fixed": "#00201c",
+                        "secondary": "#006b5f",
+                        "on-tertiary-fixed-variant": "#404849",
+                        "on-secondary-fixed-variant": "#005047",
+                        "surface-container-low": "#f0f3ff",
+                        "secondary-fixed-dim": "#6ad9c7",
+                        "surface-bright": "#f9f9ff",
+                        "on-tertiary-container": "#c2cbcc",
+                        "tertiary": "#363f40",
+                        "primary-container": "#0d5c75",
+                        "on-background": "#121c2c",
+                        "primary-fixed-dim": "#90cfec",
+                        "secondary-container": "#85f3e0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "48px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "container-max": "1200px",
+                        "xl": "80px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "headline-xl-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-xl-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom Ambient Shadow to match "Medical Glow" requirements while adhering to rules as closely as possible via standard utility combinations */
+        .medical-glow {
+            box-shadow: 0px 4px 20px rgba(13, 92, 117, 0.08);
+        }
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface/90 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+<div class="flex justify-between items-center px-gutter py-sm max-w-container-max mx-auto">
+<!-- Brand -->
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed flex items-center gap-xs hover:opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dentistry</span>
+                JC Dental Clinic
+            </a>
+<!-- Navigation Links (Web) -->
+<div class="hidden md:flex items-center gap-gutter font-label-md text-label-md">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 transition-all duration-300 px-sm py-xs rounded-lg active:scale-95 transition-transform" href="#treatments">Treatments</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 transition-all duration-300 px-sm py-xs rounded-lg active:scale-95 transition-transform" href="#transformations">Transformations</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 transition-all duration-300 px-sm py-xs rounded-lg active:scale-95 transition-transform" href="#about">About Us</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 transition-all duration-300 px-sm py-xs rounded-lg active:scale-95 transition-transform" href="#pricing">Pricing</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 transition-all duration-300 px-sm py-xs rounded-lg active:scale-95 transition-transform" href="#reviews">Reviews</a>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-sm font-label-md text-label-md">
+<a class="hidden lg:flex items-center gap-xs text-primary dark:text-primary-fixed hover:bg-primary-container/10 transition-all duration-300 px-md py-sm rounded-full border border-primary/20 active:scale-95 transition-transform" href="tel:9514379569">
+<span class="material-symbols-outlined">call</span>
+                    Call Now
+                </a>
+<a class="bg-primary text-on-primary hover:bg-primary-fixed-variant transition-all duration-300 px-md py-sm rounded-full active:scale-95 transition-transform shadow-sm" href="#book">
+                    Book Appointment
+                </a>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main>
+<!-- Section 1: Hero -->
+<section class="relative min-h-[921px] flex items-center pt-xl">
+<!-- Simulated Video Background using a high-quality placeholder image with exact styling overlay -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A cinematic, wide-angle still frame of a pristine, modern dental clinic reception area, designed to look like a paused corporate video. The space features expansive floor-to-ceiling windows letting in soft, natural morning light that reflects off polished white marble floors. The color palette is dominated by pure whites, soft muted blues, and touches of warm wood, reflecting a 'Clinical Clarity' aesthetic. In the background, a smiling receptionist in a teal uniform is gently conversing with a patient. The overall mood is incredibly welcoming, calming, and highly professional, utilizing generous whitespace in the physical architecture." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCUFlFlw6QQjLE_YbQ4uW_IHIqha-QNbju2YSaIUmq-D-43vpvquMxbVzHwKKrjEojl8MEkp2RpDDK68CiZJNIhwnUQ4bKrBlHxXagsHdcLeky5HysH3o_1emlGz9c_zT_l-uR3C1Q7MfUx5LawkA78qHpSng3vDEIJ4JYmkulWoclcCXI0-3NJrdQkB45iaVQ4qtgaaxKgatXwIXDzRknuKRz9eDg1IwL_iDyJUA5kO8IX_rbMAHAv')"></div>
+<!-- Glass/Color overlay for text readability while maintaining clinical feel -->
+<div class="absolute inset-0 bg-gradient-to-r from-surface/95 via-surface/80 to-transparent"></div>
+</div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-gutter py-xl">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-xs bg-surface-container-lowest/80 backdrop-blur-sm px-sm py-xs rounded-full border border-outline-variant/30 mb-sm">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md text-on-surface">4.8 Google Rating</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary mb-md">
+                        Smile Brighter with Us.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg max-w-xl">
+                        Comprehensive family dental care in Melakrishnanputhoor. Experience 'Clinical Clarity' with our expert team, advanced technology, and a welcoming environment designed for your comfort.
+                    </p>
+<div class="flex flex-wrap items-center gap-md">
+<a class="bg-primary text-on-primary font-label-md text-label-md px-[24px] py-[16px] rounded-full hover:bg-primary-fixed-variant transition-colors shadow-sm flex items-center gap-xs" href="#book">
+                            Book Your Appointment
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="border border-primary text-primary font-label-md text-label-md px-[24px] py-[16px] rounded-full hover:bg-surface-container transition-colors flex items-center gap-xs bg-surface-container-lowest/50 backdrop-blur-sm" href="tel:9514379569">
+<span class="material-symbols-outlined text-[18px]">phone_in_talk</span>
+                            Call Now
+                        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Instant Appointment Scheduler -->
+<section class="py-xl bg-surface-container-low relative -mt-lg z-20 rounded-t-[24px] md:rounded-t-[48px]" id="book">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="bg-surface-container-lowest rounded-xl medical-glow border border-outline-variant/30 p-md md:p-lg">
+<div class="mb-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface">Instant Appointment Scheduler</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Select your preferences below to quickly request a booking.</p>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-4 gap-gutter items-end">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface">Treatment Need</label>
+<div class="relative">
+<select class="w-full bg-surface-container text-on-surface font-body-md text-body-md rounded-lg border-transparent focus:border-primary focus:ring-1 focus:ring-primary py-[12px] pl-[16px] pr-[40px] appearance-none transition-colors">
+<option>General Checkup</option>
+<option>Root Canal</option>
+<option>Smile Designing</option>
+<option>Implants</option>
+<option>Other</option>
+</select>
+<span class="material-symbols-outlined absolute right-sm top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface">Preferred Date</label>
+<input class="w-full bg-surface-container text-on-surface font-body-md text-body-md rounded-lg border-transparent focus:border-primary focus:ring-1 focus:ring-primary py-[12px] px-[16px] transition-colors" type="date">
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface">Contact Info</label>
+<input class="w-full bg-surface-container text-on-surface font-body-md text-body-md rounded-lg border-transparent focus:border-primary focus:ring-1 focus:ring-primary py-[12px] px-[16px] transition-colors placeholder:text-outline" placeholder="Name &amp; Phone" type="text">
+</div>
+<div class="flex flex-col">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-[14px] rounded-lg hover:bg-primary-fixed-variant transition-colors shadow-sm h-[48px] flex items-center justify-center gap-xs" type="button">
+                                Confirm Request
+                                <span class="material-symbols-outlined text-[18px]">check_circle</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- Section 3: Treatments (Bento Grid) -->
+<section class="py-xl bg-background" id="treatments">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-xl max-w-2xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-sm">Comprehensive Treatments</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Expert care tailored to your unique smile, utilizing state-of-the-art technology in a sterile, welcoming environment.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-base md:gap-md">
+<!-- Treatment Card 1 -->
+<details class="group bg-surface-container-lowest rounded-xl border border-outline-variant/30 medical-glow overflow-hidden cursor-pointer">
+<summary class="list-none p-md flex flex-col items-start gap-sm">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">healing</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-[20px]">Root Canal</h3>
+<div class="flex w-full justify-between items-center mt-auto">
+<span class="font-label-md text-label-md text-primary">Learn More</span>
+<span class="material-symbols-outlined text-outline group-open:rotate-180 transition-transform">expand_more</span>
+</div>
+</summary>
+<div class="px-md pb-md pt-0 text-on-surface-variant font-body-md text-body-md border-t border-outline-variant/20 mt-xs">
+<p class="mt-sm">Painless root canal therapies utilizing advanced rotary endodontics to save infected teeth and restore your comfort immediately.</p>
+</div>
+</details>
+<!-- Treatment Card 2 -->
+<details class="group bg-surface-container-lowest rounded-xl border border-outline-variant/30 medical-glow overflow-hidden cursor-pointer">
+<summary class="list-none p-md flex flex-col items-start gap-sm h-full">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">workspace_premium</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-[20px]">Dental Crowns</h3>
+<div class="flex w-full justify-between items-center mt-auto">
+<span class="font-label-md text-label-md text-primary">Learn More</span>
+<span class="material-symbols-outlined text-outline group-open:rotate-180 transition-transform">expand_more</span>
+</div>
+</summary>
+<div class="px-md pb-md pt-0 text-on-surface-variant font-body-md text-body-md border-t border-outline-variant/20 mt-xs">
+<p class="mt-sm">Durable, natural-looking porcelain and zirconia crowns to protect weakened teeth and enhance your smile's aesthetics.</p>
+</div>
+</details>
+<!-- Treatment Card 3 (Larger Bento item on desktop) -->
+<details class="group bg-surface-container-lowest rounded-xl border border-outline-variant/30 medical-glow overflow-hidden cursor-pointer lg:col-span-2">
+<summary class="list-none p-md flex flex-col items-start gap-sm h-full relative z-10">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">auto_awesome</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-[20px]">Smile Designing</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md hidden md:block">Transform your confidence with our digital smile design process, mapping out your perfect aesthetic before treatment begins.</p>
+<div class="flex w-full justify-between items-center mt-auto pt-sm">
+<span class="font-label-md text-label-md text-primary">Learn More</span>
+<span class="material-symbols-outlined text-outline group-open:rotate-180 transition-transform">expand_more</span>
+</div>
+</summary>
+<div class="px-md pb-md pt-0 text-on-surface-variant font-body-md text-body-md border-t border-outline-variant/20 mt-xs">
+<p class="mt-sm">A comprehensive approach combining veneers, whitening, and contouring to create a harmonious, flawless smile tailored to your facial structure.</p>
+</div>
+</details>
+<!-- Treatment Card 4 -->
+<details class="group bg-surface-container-lowest rounded-xl border border-outline-variant/30 medical-glow overflow-hidden cursor-pointer">
+<summary class="list-none p-md flex flex-col items-start gap-sm">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">cloud_download</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-[20px]">Dental Implants</h3>
+<div class="flex w-full justify-between items-center mt-auto">
+<span class="font-label-md text-label-md text-primary">Learn More</span>
+<span class="material-symbols-outlined text-outline group-open:rotate-180 transition-transform">expand_more</span>
+</div>
+</summary>
+<div class="px-md pb-md pt-0 text-on-surface-variant font-body-md text-body-md border-t border-outline-variant/20 mt-xs">
+<p class="mt-sm">Permanent, secure replacements for missing teeth that look, feel, and function exactly like your natural teeth.</p>
+</div>
+</details>
+<!-- Treatment Card 5 -->
+<details class="group bg-surface-container-lowest rounded-xl border border-outline-variant/30 medical-glow overflow-hidden cursor-pointer">
+<summary class="list-none p-md flex flex-col items-start gap-sm">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">child_care</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-[20px]">Child Dentistry</h3>
+<div class="flex w-full justify-between items-center mt-auto">
+<span class="font-label-md text-label-md text-primary">Learn More</span>
+<span class="material-symbols-outlined text-outline group-open:rotate-180 transition-transform">expand_more</span>
+</div>
+</summary>
+<div class="px-md pb-md pt-0 text-on-surface-variant font-body-md text-body-md border-t border-outline-variant/20 mt-xs">
+<p class="mt-sm">Gentle, preventive care designed to make your child's early dental experiences positive and set the foundation for lifelong oral health.</p>
+</div>
+</details>
+<!-- View All CTA -->
+<div class="lg:col-span-2 flex items-center justify-center p-md">
+<a class="inline-flex items-center gap-xs font-label-md text-label-md text-primary hover:text-primary-fixed-variant transition-colors group" href="#contact">
+                            View All Specialized Treatments
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: About & Team -->
+<section class="py-xl bg-surface-container-low" id="about">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
+<!-- Clinic Story -->
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-sm">Meet The Experts</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-md">At JC Dental Clinic, our philosophy of 'Clinical Clarity' means transparency in your treatment and precision in our practice.</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">Founded on the principles of family-oriented care, we bring together highly specialized professionals to offer a comprehensive range of treatments under one roof in Melakrishnanputhoor. From pediatric care to complex oral rehabilitations, our team is dedicated to your well-being.</p>
+<!-- Mini Image grid replacing single large image for bento feel -->
+<div class="grid grid-cols-2 gap-sm">
+<div class="bg-cover bg-center rounded-lg h-[160px] w-full" data-alt="A close-up, highly detailed shot of pristine, modern dental instruments arranged neatly on a stainless steel tray. The lighting is bright and sterile, emphasizing a 'Clinical Clarity' aesthetic with soft blue ambient light reflecting off the metallic surfaces. The depth of field is shallow, blurring a high-tech dental chair in the pristine white background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCFgJIQr_2h9zjQFJtl0x5JHcicgp3A1VHCEvEp0K2SG-nGoxSABUTTplFWk59Diweq4lh_ENn-tv8csMOIr6KCq3qcq-8WD3gzCzBgKTrEfvZEeywkzqiKZdXTQ9J4duYiHUgpA9ZwUPIMpXsZic1pXl3NNBqVZTZzMRzKPZ1ldmVpFnlK8XbwcTWX0VAYqfLQnobZjPalZSOtSEHrTnXKo2y5VfZCaXkBxHfLMsfI50mS36dKJqXO')"></div>
+<div class="bg-cover bg-center rounded-lg h-[160px] w-full mt-lg" data-alt="A warm, candid photo of a female dentist in a crisp teal uniform smiling gently while speaking with an older patient in a brightly lit, modern consultation room. The walls are a soft, calming white with subtle architectural details. The atmosphere is professional, trusting, and empathetic, utilizing generous natural light to enhance the modern corporate healthcare aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCvsnVLRyNLfXTmjGZuPH4tS3l57y3UlRoLDQyGAeY4ESH2a80Xk1QV6pL1nDM5Xqk40J8cnfJlelQGrs6R_H0-6xFRtPHkuM_P_1NRRX8kBStY1WHc6JTELwdsEBX58_2fEel2-F59kCeZuQzzk2RPJe73T8irOstPJH_KvAf7MXdMt2qya2UBQI1JjLmX2WpUgQsCAUh5eKIf8_QzgJzUXxXdpyATRp_YbsPotpJmgCKmxqCdGZ-_')"></div>
+</div>
+</div>
+<!-- Team Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+<!-- Dr 1 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 medical-glow p-md">
+<div class="w-16 h-16 rounded-full bg-surface-container-high mb-sm overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="A professional headshot of Dr. Desmen Borshiya C, a female dentist with a warm, welcoming smile. She is wearing a pristine white clinical coat over a soft blue shirt. The background is a clean, out-of-focus modern clinic setting with light grey and white tones, matching the 'Clinical Clarity' brand style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB89-6H9oeDwxcTrvrBlZN01Jg4GLhSPxJoZFdqDV5fT1H13dDLdcH5luLizJP0KwUbq9TWg3nF7YPi8sJeUbGIZ5HkWB9tLGr4X5ryeE8WFwX0dMlwRLhHHv3LnC7JgCgGwVXOZPFYHuPAaIk-D67sAZXiZBfHC9kddrRE02D0KlXNlJFbQrdSj-VHPIHF-DjS2QRDDa3lIA6PIsXtgWHkMPeTAqcmx71BrAh7SXh0SD9MQpYWOdLo')"></div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-[18px]">Dr. Desmen Borshiya C</h3>
+<p class="font-label-md text-label-md text-secondary mb-xs">BDS</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-[14px]">Dedicated to providing gentle, comprehensive general dentistry and patient education.</p>
+</div>
+<!-- Dr 2 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 medical-glow p-md">
+<div class="w-16 h-16 rounded-full bg-surface-container-high mb-sm overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="A professional headshot of Dr. Suresh, a male dental specialist. He exhibits a confident, reassuring expression and wears a modern teal scrubs top under a white coat. The lighting is soft and flattering, set against a bright, minimalist clinic background to convey trust and advanced medical expertise." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCj8Q8Up3QU9CTyLNZghL5S2koB9u0t1-8sgMH-hkRNb1sy4rTevSP55TgOM1hNnvpDip73OmKeqZo4L2NpLlDcsZxuHya-Kr3MecTnwFY5091vaPFX4PAOBezTan-EZAg34cICBpmugfK6uhUfPfye1LZLw7qZvnBK0bK4QZEur4kCUdLBjuXJuPWsgY2u67gB8fa6G7RHOHZOw79HToI1bEn9yONHo8jIR_b7D7pu2OFqsAL6jWul')"></div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-[18px]">Dr. Suresh</h3>
+<p class="font-label-md text-label-md text-secondary mb-xs">MDS (Orthodontics)</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-[14px]">Specialist in aligning smiles using advanced bracket systems and clear aligners.</p>
+</div>
+<!-- Dr 3 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 medical-glow p-md sm:col-span-2 flex items-center gap-md">
+<div class="w-16 h-16 shrink-0 rounded-full bg-surface-container-high overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="A professional headshot of Dr. Seelan, a male dental surgeon. He looks knowledgeable and friendly, dressed in clinical attire. The photography style is high-end corporate medical, with bright, even lighting and a soft, clean aesthetic utilizing the brand's signature whites and teals in the blurred background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAdtzzC8DC7y4q3buwyoiG5iHLPcAd_ji6e8etGawIuqbUw2Wul2NdfSh_QKg2d7j0nCbKDPT1agHyHNQ3MdGwvPTkWdMRWQo-z7J8aPLqBJQn8j4RKueCB-fbFYektOvXAunpRDK1y3o_Dsthpi7x8L1CyJluJE57BS9fmWOtMBqjUwqv4pUe3cH1pPe9bColjjxZFR-dNbrjPiuIVAgaee0NIlw6anKFACLJakq7Els-Yyq8QJ_kL')"></div>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-[18px]">Dr. Seelan</h3>
+<p class="font-label-md text-label-md text-secondary mb-xs">MDS (Oral &amp; Maxillofacial)</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-[14px]">Expert in complex extractions, implants, and full mouth rehabilitations.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 7: Patient Reviews -->
+<section class="py-xl bg-background overflow-hidden" id="reviews">
+<div class="max-w-container-max mx-auto px-gutter relative">
+<div class="text-center mb-lg">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-sm">Stories of Smiles</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Hear from our patients about their experiences.</p>
+</div>
+<!-- Carousel Container -->
+<div class="flex gap-md overflow-x-auto hide-scroll snap-x snap-mandatory pb-md">
+<!-- Review 1 -->
+<div class="shrink-0 w-[300px] md:w-[400px] bg-surface-container-lowest rounded-xl border border-outline-variant/30 medical-glow p-md snap-center">
+<div class="flex gap-xs mb-sm text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md italic">"The clinic is spotlessly clean and the staff is incredibly welcoming. Dr. Desmen made my root canal procedure completely painless. I highly recommend JC Dental Clinic to anyone in the area."</p>
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-label-md">P</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Preethi</p>
+<p class="font-body-md text-body-md text-[12px] text-outline">Verified Patient</p>
+</div>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="shrink-0 w-[300px] md:w-[400px] bg-surface-container-lowest rounded-xl border border-outline-variant/30 medical-glow p-md snap-center">
+<div class="flex gap-xs mb-sm text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md italic">"Took my son here for his first checkup. The team was so patient and handled him perfectly. Child dentistry here is top-notch, removing all the fear from visiting the dentist."</p>
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-label-md">R</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Rajesh K.</p>
+<p class="font-body-md text-body-md text-[12px] text-outline">Verified Patient</p>
+</div>
+</div>
+</div>
+<!-- Review 3 -->
+<div class="shrink-0 w-[300px] md:w-[400px] bg-surface-container-lowest rounded-xl border border-outline-variant/30 medical-glow p-md snap-center">
+<div class="flex gap-xs mb-sm text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md italic">"Got my implants done by Dr. Seelan. The entire process from consultation to the final crown was seamless. Transparent pricing and exceptional clinical clarity."</p>
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-label-md">A</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Anitha M.</p>
+<p class="font-body-md text-body-md text-[12px] text-outline">Verified Patient</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component from JSON) -->
+<footer class="w-full bg-surface-container-highest dark:bg-inverse-surface border-t border-outline-variant/50">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter py-lg max-w-container-max mx-auto gap-base">
+<!-- Brand & Copyright -->
+<div class="flex flex-col items-center md:items-start gap-xs">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">JC Dental Clinic</span>
+<p class="text-on-surface dark:text-inverse-on-surface font-body-md text-body-md text-center md:text-left text-[14px]">
+                    © 2024 JC Dental Clinic. Clinical Clarity in Every Smile.
+                </p>
+</div>
+<!-- Links -->
+<div class="flex flex-wrap justify-center gap-md mt-sm md:mt-0 font-body-md text-body-md">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-secondary-fixed transition-colors" href="#">Patient Rights</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-secondary-fixed transition-colors" href="#">Accessibility</a>
+</div>
+</div>
+</footer>
+</body></html>
